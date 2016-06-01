@@ -418,4 +418,6 @@ function sircomm_widget_tag_cloud_args( $args ) {
 }
 add_filter( 'widget_tag_cloud_args', 'sircomm_widget_tag_cloud_args' );
 
-require get_template_directory() . '/classes/plugin_require.php';
+require 'classes/plugin_require.php';
+require 'inc/template-hooks.php';
+require 'inc/template-functions.php';

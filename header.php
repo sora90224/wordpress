@@ -34,13 +34,21 @@ do_action('sir_comm_before_header');
 		<header id="masthead" class="site-header" role="banner">
 
         <div class="site-header-main">
+            
+            <ul id="gnb">
+                <li><a href="#">분류1</a></li>
+                <li><a href="#">분류2</a></li>
+                <li><a href="#">분류3</a></li>
+                <li><a href="#">분류4</a></li>
+                <li><a href="#">분류5</a></li>
+            </ul>
             <div class="site-branding">
                 <?php sircomm_the_custom_logo(); ?>
                 <?php if ( is_front_page() && is_home() ) : ?>
                     <h1 class="site-title">
-                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                        <!--a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
                          <?php bloginfo( 'name' ); ?> 
-                        </a>
+                        </a-->
                           
                         <?php if ( get_header_image() ) : ?>
                         <?php
@@ -73,16 +81,9 @@ do_action('sir_comm_before_header');
                     <!-- <p class="site-description"><?php echo $description; ?></p> -->
                 <?php endif; ?>
             </div>
-            <a href="#" class="hd_cart_btn">장바구니</a>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>cart" class="hd_cart_btn">장바구니</a>
             <button id="menu-toggle" class="menu-toggle">전체메뉴</button>
 
-            <ul id="gnb">
-                <li><a href="#">분류1</a></li>
-                <li><a href="#">분류2</a></li>
-                <li><a href="#">분류3</a></li>
-                <li><a href="#">분류4</a></li>
-                <li><a href="#">분류5</a></li>
-            </ul>
         </div>
         <!-- .site-header-main -->
         <!--카테고리-->
@@ -97,12 +98,23 @@ do_action('sir_comm_before_header');
                     <ul class="site-header-top-link">
                         <?php if( is_user_logged_in () ){   //로그인 했으면 ?>
                         <li class="site-link-logout"><a href="<?php echo wp_logout_url(); ?>"><?php _e('로그아웃', SIR_CMM_NAME); ?></a></li>
-                        <li class="site-link-mypage"><a href="#">마이페이지</a></li>
+                        <li class="site-link-mypage"><a href="<?php echo esc_url( home_url( '/' ) ); ?>my_page">마이페이지</a></li>
                         <?php } else {  //로그인 하지 않았다면 ?>
                         <li class="site-link-login"><a href="<?php echo wp_login_url(); ?>"><?php _e('로그인', SIR_CMM_NAME); ?></a></li>
                         <?php } ?>
                     </ul> 
                 </div>
+
+                <ul id="cate-service-menu">
+                    <li><a href="#">주문조회</a></li>
+                    <li><a href="#">개인결제</a></li>
+                    <li><a href="#">리뷰</a></li>
+                    <li><a href="#">QA</a></li>
+                    <li><a href="#">고객센터</a></li>
+                    <li><a href="#">1:1문의</a></li>
+                    <li><a href="#">세일상품</a></li>
+                    <li><a href="#">갤러리</a></li>
+                </ul>
 
                 <div id="site-header-menu" class="site-header-menu">
                     <?php if ( has_nav_menu( 'primary' ) ) : ?>
@@ -135,13 +147,7 @@ do_action('sir_comm_before_header');
             <button type="button" class="menu-close-btn">메뉴닫기</button>
 
         </div>
-        <script>
-        jQuery( document ).ready( function( $ ) {
-            $(".menu-close-btn").on("click", function(){
-                $(".hd_cate").css("display","none");
-            });
-        } );
-        </script>
+
         <!--카테고리-->
 		</header><!-- .site-header -->
 		<div id="content" class="site-content site-inner">

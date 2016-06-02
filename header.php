@@ -35,7 +35,7 @@ do_action('sir_comm_before_header');
 
         <div class="site-header-main">
             
-            <ul id="gnb">
+            <ul class="site-header-gnb">
                 <li><a href="#">분류1</a></li>
                 <li><a href="#">분류2</a></li>
                 <li><a href="#">분류3</a></li>
@@ -69,11 +69,30 @@ do_action('sir_comm_before_header');
                             </a>
                         </div><!-- .header-image -->
                     <?php endif; // End header image check. ?>
+                    </h1>
+                 <?php else : ?>
+                    <h1 class="site-title">
+                        <?php if ( get_header_image() ) : ?>
+                        <?php
+                            /**
+                             * Filter the default custom header sizes attribute.
+                             *
+                             * @since sir community 1.0
+                             *
+                             * @param string $custom_header_sizes sizes attribute
+                             * for Custom Header. Default '(max-width: 709px) 85vw,
+                             * (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px'.
+                             */
+                            $custom_header_sizes = apply_filters( 'sircomm_custom_header_sizes', '(max-width: 709px) 85vw, (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px' );
+                        ?>
+                        <div class="header-image">
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                                <img src="<?php header_image(); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_custom_header()->attachment_id ) ); ?>" sizes="<?php echo esc_attr( $custom_header_sizes ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+                            </a>
+                        </div><!-- .header-image -->
+                    <?php endif; // End header image check. ?>
                     
                     </h1>
-                <?php else : ?>
-                    <!-- <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>  -->
-
                 <?php endif;
 
                 $description = get_bloginfo( 'description', 'display' );
@@ -89,6 +108,7 @@ do_action('sir_comm_before_header');
         <!--카테고리-->
 
         <div class="hd_cate"><!-- site-inner -->
+            <div class="hd-cate-wr">
             <?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) ) : ?>
                 <div class="hd-search">
                     <input type="text" placeholder="검색어" class="hd-search-input">
@@ -143,7 +163,7 @@ do_action('sir_comm_before_header');
                     <?php endif; ?>
                 </div><!-- .site-header-menu -->
             <?php endif; ?>
-
+            </div>
             <button type="button" class="menu-close-btn">메뉴닫기</button>
 
         </div>

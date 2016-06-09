@@ -418,6 +418,22 @@ function sircomm_widget_tag_cloud_args( $args ) {
 }
 add_filter( 'widget_tag_cloud_args', 'sircomm_widget_tag_cloud_args' );
 
+if(! function_exists('is_gnucommerce_activated') ){
+    function is_gnucommerce_activated(){
+        return class_exists( 'GNUCommerce' ) ? true : false;
+    }
+}
+
+function sircomm_do_shortcode( $tag, array $atts = array(), $content = null ) {
+	global $shortcode_tags;
+
+	if ( ! isset( $shortcode_tags[ $tag ] ) ) {
+		return false;
+	}
+
+	return call_user_func( $shortcode_tags[ $tag ], $atts, $content, $tag );
+}
+
 require 'classes/plugin_require.php';
 require 'inc/template-hooks.php';
 require 'inc/template-functions.php';

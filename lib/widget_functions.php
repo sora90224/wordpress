@@ -10,7 +10,6 @@ add_action( 'widgets_init', 'sir_community_widgets_init' );
  */
 function sir_community_widgets_init() {
 
-
     if( defined('GC_BOARD_KEY') ){
         register_widget( 'sir_latest_board_widget' );   // 그누커머스 최신글 위젯
         register_widget( 'sir_comm_login_widget' ); // 로그인 위젯

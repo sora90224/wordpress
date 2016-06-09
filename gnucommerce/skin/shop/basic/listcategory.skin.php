@@ -12,9 +12,8 @@ if ( $cats ) {
 	foreach ( $cats as $key => $crumb ) {
 
 		if ( ! empty( $crumb[1] ) && sizeof( $cats ) !== $key + 1 ) {
-			echo '<a href="' . esc_url( $crumb[1] ) . '" class="sct_bg">' . esc_html( $crumb[0] ) . '</a>';
 		} else {
-			echo '<span class="sct_here">'.esc_html( $crumb[0] ).'</span>';
+			echo '<h2 class="shop-tit"><span>'.esc_html( $crumb[0] ).'</span></h2>';
 		}
 
 		if ( sizeof( $cats ) !== $key + 1 ) {

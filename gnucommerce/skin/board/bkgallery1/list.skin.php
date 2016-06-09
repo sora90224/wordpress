@@ -110,7 +110,7 @@ if (!defined('ABSPATH')) exit; // 개별 페이지 접근 불가
                         if($thumb['src']) {
                             $img_content = '<img src="'.$thumb['src'].'" alt="'.$thumb['alt'].'" class="gall_img" >';
                         } else {
-                            $img_content = '<img src="'.$board_skin_url.'/img/no_img.jpg" class="gall_img" >';
+                            $img_content = '<img src="'.$board_skin_url.'/img/no-img.png" class="gall_img" >';
                         }
 
                         echo $img_content;
@@ -128,25 +128,25 @@ if (!defined('ABSPATH')) exit; // 개별 페이지 접근 불가
                     <a href="<?php echo $v['href'] ?>">
                         <?php echo $v['subject'] ?>
                         <?php if ($v['comment_cnt']) { ?><span class="sound_only"><?php _e('댓글', GC_NAME);?></span><?php echo $v['comment_cnt']; ?><?php } ?>
-                    </a>
-                    <?php
-                    // if ($v['link']['count']) { echo '['.$v['link']['count']}.']'; }
-                    // if ($v['file']['count']) { echo '<'.$v['file']['count'].'>'; }
+                    
+                        <?php
+                        // if ($v['link']['count']) { echo '['.$v['link']['count']}.']'; }
+                        // if ($v['file']['count']) { echo '<'.$v['file']['count'].'>'; }
 
-                    if (isset($v['icon_new'])) echo $v['icon_new'];
-                    if (isset($v['icon_hot'])) echo $v['icon_hot'];
-                    //if (isset($v['icon_file'])) echo $v['icon_file'];
-                    //if (isset($v['icon_link'])) echo $v['icon_link'];
-                    //if (isset($v['icon_secret'])) echo $v['icon_secret'];
-                     ?>
+                        if (isset($v['icon_new'])) echo $v['icon_new'];
+                        if (isset($v['icon_hot'])) echo $v['icon_hot'];
+                        //if (isset($v['icon_file'])) echo $v['icon_file'];
+                        //if (isset($v['icon_link'])) echo $v['icon_link'];
+                        //if (isset($v['icon_secret'])) echo $v['icon_secret'];
+                         ?>
+                     </a>
                 </li>
                 
                 <li class="text-info text-id">
                     <?php if($is_show_field['writer']){ // 게시판 설정 중 작성자 체크가 되어 있으면  ?>
                     <span><i class="fa fa-user" aria-hidden="true"></i> <?php echo $v['name'] ?></span>
                     <?php } ?>
-                </li>
-                <li class="text-info">
+
                     <?php if($is_show_field['wdate']){ // 게시판 설정 중 작성일 체크가 되어 있으면 ?>
                     <span class="text-date"><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $v['datetime2'] ?></span>
                     <?php } ?>

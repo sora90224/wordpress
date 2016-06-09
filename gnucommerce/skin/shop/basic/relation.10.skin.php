@@ -6,7 +6,7 @@ do_action( GC_NAME.'_skin_action', __FILE__, plugin_dir_path( __FILE__) );
 ?>
 
 <!-- 상품진열 10 시작 { -->
-<ul class="sct boots_row sct_10">
+<ul class="sct boots_row sct_rel">
 <?php
 $item_list = NEW GC_item_list();
 $loop_skin_file = apply_filters('get_shop_related_skin_file', 'itemloop.skin.php');

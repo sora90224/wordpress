@@ -107,8 +107,8 @@ do_action( GC_NAME.'_skin_action', __FILE__, plugin_dir_path( __FILE__) );
 ?>
 
 <div id="sit_qa_wbtn">
-    <a href="<?php echo $itemqa_form; ?>" class="btn02 itemqa_form_btn">상품문의 쓰기</a>
-    <a href="<?php echo $itemqa_list; ?>" id="itemqa_list" class="btn01">더보기</a>
+    <a href="<?php echo $itemqa_form; ?>" class="btn-blue itemqa_form_btn">상품문의 쓰기</a>
+    <a href="<?php echo $itemqa_list; ?>" id="itemqa_list" class="btn-grd">더보기</a>
 </div>
 
 <script>

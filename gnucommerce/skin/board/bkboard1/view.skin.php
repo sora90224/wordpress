@@ -16,6 +16,89 @@ wp_enqueue_script( $bo_table.'-view-skin-js', $board_skin_url.'/js/view.skin.js'
             ?>
         </h1>
     </header>
+        
+    <section id="bo_v_info">
+        <h2><?php _e('페이지정보', GC_NAME);?></h2>
+        <div class="bo_info">
+            <i class="fa fa-user" aria-hidden="true"></i> <strong><?php echo $view['name'] ?><?php if ($is_ip_view) { echo "&nbsp;($ip)"; } ?></strong> <!-- <?php _e('작성자', GC_NAME);?> -->
+            <i class="fa fa-clock-o" aria-hidden="true"></i> <strong><?php echo date("y-m-d H:i", strtotime($view['wr_datetime'])) ?></strong> <!-- <span class="sound_only"><?php _e('날짜', GC_NAME);?></span> -->
+            <i class="fa fa-eye" aria-hidden="true"></i> <strong>조회 <?php echo number_format($view['wr_hit']) ?></strong> <!-- <?php _e('조회수', GC_NAME);?> -->
+            <i class="fa fa-comments-o" aria-hidden="true"></i> <strong>댓글 <?php echo number_format($view['wr_comment']) ?></strong> <!-- <?php _e('댓글', GC_NAME);?> -->
+        </div>
+        <!-- 첨부파일 시작 { -->
+        <div id="bo_v_file">
+            <h2><?php _e('첨부파일', GC_NAME);?></h2>
+            <ul>
+                <?php
+                // 가변 파일
+                for ($i=0; $i<count($view['file']); $i++) {
+                    if (isset($view['file'][$i]['source']) && $view['file'][$i]['source'] && !$view['file'][$i]['view']) {
+                 ?>
+                    <li>
+                        <a href="<?php echo esc_url( $view['file'][$i]['href'] ); ?>" class="view_file_download no-ajaxy">
+                            <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                            <strong><?php echo $view['file'][$i]['source'] ?></strong>
+                            <?php echo $view['file'][$i]['content'] ?> (<?php echo $view['file'][$i]['size'] ?>)
+                        </a>
+                        <span class="bo_v_file_cnt"><?php echo $view['file'][$i]['download'] ?><?php _e('회', GC_NAME);    //회 ?></span>
+                        <span class="bo_v_file_date"><?php echo $view['file'][$i]['datetime'] ?></span>
+                    </li>
+                <?php
+                    }
+                }
+                 ?>
+            </ul>
+            
+            <?php
+            $cnt = 0;
+            if ($view['file']['count']) {
+                $cnt = 0;
+                for ($i=0; $i<count($view['file']); $i++) {
+                    if (isset($view['file'][$i]['source']) && $view['file'][$i]['source'] && !$view['file'][$i]['view'])
+                        $cnt++;
+                }
+            }
+            ?>
+    
+            <?php if($cnt) { ?>
+           
+            <!-- 첨부파일 끝 } -->
+            <?php } ?>
+    
+            <?php
+            if (implode('', $view['link'])) {
+            ?>
+            <!-- 관련링크 시작 { -->
+            <div id="bo_v_link">
+                <h2><?php _e('관련링크', GC_NAME); //관련링크?></h2>
+                <ul>
+                <?php
+                // 링크
+                $cnt = 0;
+                for ($i=1; $i<=count($view['link']); $i++) {
+                    if ($view['link'][$i]) {
+                        $cnt++;
+                        $link = gc_cut_str($view['link'][$i], 70);
+                 ?>
+                    <li>
+                        <a href="<?php echo esc_url( $view['link_href'][$i] ); ?>" target="_blank">
+                            <i class="fa fa-link" aria-hidden="true"></i> <span class="sound_only">관련링크</span>
+                            <!-- <img src="<?php echo $board_skin_url ?>/img/icon_link.gif" alt="<?php _e('관련링크', GC_NAME); //관련링크?>"> -->
+                            <strong><?php echo $link ?></strong>
+                        </a>
+                        <span class="bo_v_link_cnt"><?php echo $view['link_hit'][$i] ?><?php _e('회', GC_NAME); //회?></span>
+                    </li>
+                <?php
+                    }
+                }
+                 ?>
+                </ul>
+            </div>
+            <!-- } 관련링크 끝 -->
+        </div>
+     <?php } ?>
+     </section>
+   
 
     <section id="bo_v_atc">
         <h2 id="bo_v_atc_title"><?php _e('본문', GC_NAME); //본문?></h2>
@@ -42,7 +125,64 @@ wp_enqueue_script( $bo_table.'-view-skin-js', $board_skin_url.'/js/view.skin.js'
         <div id="bo_v_con"><?php echo gc_get_view_thumbnail($view['content'],  $board['bo_image_width']); ?></div>
         <?php //echo $view['rich_content']; // {이미지:0} 과 같은 코드를 사용할 경우 ?>
         <!-- } 본문 내용 끝 -->
-        
+       
+        <?php if ($is_signature) { ?><p><?php echo $signature ?></p><?php } ?>
+
+        <!-- 스크랩 추천 비추천 시작 { -->
+        <?php if ($scrap_href || $good_href || $nogood_href) { ?>
+        <div id="bo_v_act">
+            <?php if ($scrap_href) { ?><a href="<?php echo esc_url( $scrap_href ); ?>" target="_blank" class="btn_b01" onclick="gcboard.win_scrap(this.href); return false;"><i class="fa fa-heart" aria-hidden="true"></i> <?php _e('스크랩', GC_NAME); //스크랩?></a><?php } ?>
+            <?php if ($good_href) { ?>
+            <span class="bo_v_act_gng">
+                <a href="<?php echo esc_url( $good_href ) ?>" id="good_button" class="btn_b03" target="_blank">
+                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <?php //추천?>
+                    <strong><?php echo number_format($view['wr_good']) ?></strong></a>
+                <b id="bo_v_act_good"></b>
+            </span>
+            <?php } ?>
+            <?php if ($nogood_href) { ?>
+            <span class="bo_v_act_gng">
+                <a href="<?php echo esc_url( $nogood_href ) ?>" id="nogood_button" class="btn_b03" target="_blank">
+                    <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> <?php //비추천?>
+                    <strong><?php echo number_format($view['wr_nogood']) ?></strong></a>
+                <b id="bo_v_act_nogood"></b>
+            </span>
+            <?php } ?>
+        </div>
+        <?php } else {
+            if($board['bo_use_good'] || $board['bo_use_nogood']) {
+        ?>
+        <div id="bo_v_act">
+            <?php if($board['bo_use_good']) { ?>
+                <span class="btn_b03">
+                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>  <?php //추천?> <strong><?php echo number_format($view['wr_good']) ?></strong>
+                </span>
+            <?php } ?>
+            <?php if($board['bo_use_nogood']) { ?>
+                <span class="btn_b03">
+                    <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> <?php //비추천?> <strong><?php echo number_format($view['wr_nogood']) ?></strong>
+                </span>
+            <?php } ?>
+        </div>
+        <?php
+            }
+        }
+        ?>
+        <!-- } 스크랩 추천 비추천 끝 -->
+        <?php
+        if( count($tag_array) ){   //태그가 존재한다면
+            echo "<div class=\"bo-tags bo-tags-view\"><i class=\"fa fa-tag\" aria-hidden=\"true\"></i>";
+            foreach( $tag_array as $term ){
+                if( empty($term) ) continue;
+        ?>
+            <a href="<?php echo $term['href']?>"><?php echo $term['name'];?></a>
+        <?php
+            }
+            echo "</div>";
+        }
+        ?>
+    </section>
+ 
         <!-- 게시물 상단 버튼 시작 { -->
         <div id="bo_v_top">
             <?php
@@ -72,147 +212,7 @@ wp_enqueue_script( $bo_table.'-view-skin-js', $board_skin_url.'/js/view.skin.js'
         </div>
         <!-- } 게시물 상단 버튼 끝 -->
     
-        <?php if ($is_signature) { ?><p><?php echo $signature ?></p><?php } ?>
 
-        <!-- 스크랩 추천 비추천 시작 { -->
-        <?php if ($scrap_href || $good_href || $nogood_href) { ?>
-        <div id="bo_v_act">
-            <?php if ($scrap_href) { ?><a href="<?php echo esc_url( $scrap_href ); ?>" target="_blank" class="btn_b01" onclick="gcboard.win_scrap(this.href); return false;"><i class="fa fa-heart" aria-hidden="true"></i> <?php _e('스크랩', GC_NAME); //스크랩?></a><?php } ?>
-            <?php if ($good_href) { ?>
-            <span class="bo_v_act_gng">
-                <a href="<?php echo esc_url( $good_href ) ?>" id="good_button" class="btn_b03" target="_blank">
-                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                    <strong><?php echo number_format($view['wr_good']) ?></strong></a>
-                <b id="bo_v_act_good"></b>
-            </span>
-            <?php } ?>
-            <?php if ($nogood_href) { ?>
-            <span class="bo_v_act_gng">
-                <a href="<?php echo esc_url( $nogood_href ) ?>" id="nogood_button" class="btn_b03" target="_blank">
-                    <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
-                    <strong><?php echo number_format($view['wr_nogood']) ?></strong>
-                </a>
-                <b id="bo_v_act_nogood"></b>
-            </span>
-            <?php } ?>
-        </div>
-        <?php } else {
-            if($board['bo_use_good'] || $board['bo_use_nogood']) {
-        ?>
-        <div id="bo_v_act">
-            <p class="bo_v_act_view">
-                <?php if($board['bo_use_good']) { ?>
-                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                <?php } ?>
-                <strong><?php echo number_format($view['wr_good']) ?></strong>
-            </p>
-            <p class="bo_v_act_view">
-                <?php if($board['bo_use_nogood']) { ?>
-                <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
-                <?php } ?>
-                <strong><?php echo number_format($view['wr_nogood']) ?></strong>
-            </p>
-        </div>
-        <?php
-            }
-        }
-        ?>
-        <!-- } 스크랩 추천 비추천 끝 -->
-
-        <section id="bo_v_info">
-            <h2><?php _e('페이지정보', GC_NAME);?></h2>
-            <i class="fa fa-user" aria-hidden="true"></i> <strong><?php echo $view['name'] ?></strong> <!-- <?php _e('작성자', GC_NAME);?><?php if ($is_ip_view) { echo "&nbsp;($ip)"; } ?> -->
-            <i class="fa fa-clock-o" aria-hidden="true"></i> <strong><?php echo date("y-m-d H:i", strtotime($view['wr_datetime'])) ?></strong> <!-- <span class="sound_only"><?php _e('날짜', GC_NAME);?></span> -->
-            <i class="fa fa-eye" aria-hidden="true"></i> <strong>조회 <?php echo number_format($view['wr_hit']) ?></strong> <!-- <?php _e('조회수', GC_NAME);?> -->
-            <i class="fa fa-comments-o" aria-hidden="true"></i> <strong>댓글 <?php echo number_format($view['wr_comment']) ?></strong> <!-- <?php _e('댓글', GC_NAME);?> -->
-            <!-- 첨부파일 시작 { -->
-            <div id="bo_v_file">
-                <h2><?php _e('첨부파일', GC_NAME);?></h2>
-                <ul>
-                    <?php
-                    // 가변 파일
-                    for ($i=0; $i<count($view['file']); $i++) {
-                        if (isset($view['file'][$i]['source']) && $view['file'][$i]['source'] && !$view['file'][$i]['view']) {
-                     ?>
-                        <li>
-                            <a href="<?php echo esc_url( $view['file'][$i]['href'] ); ?>" class="view_file_download no-ajaxy">
-                                <i class="fa fa-floppy-o" aria-hidden="true"></i>
-                                <strong><?php echo $view['file'][$i]['source'] ?></strong>
-                                <?php echo $view['file'][$i]['content'] ?> (<?php echo $view['file'][$i]['size'] ?>)
-                            </a>
-                            <span class="bo_v_file_cnt"><?php echo $view['file'][$i]['download'] ?><?php _e('회', GC_NAME);    //회 ?></span>
-                            <span class="bo_v_file_date"><?php echo $view['file'][$i]['datetime'] ?></span>
-                        </li>
-                    <?php
-                        }
-                    }
-                     ?>   
-                </ul>
-       
-                <?php
-                $cnt = 0;
-                if ($view['file']['count']) {
-                    $cnt = 0;
-                    for ($i=0; $i<count($view['file']); $i++) {
-                        if (isset($view['file'][$i]['source']) && $view['file'][$i]['source'] && !$view['file'][$i]['view'])
-                            $cnt++;
-                    }
-                }
-                ?>    
-        
-                <?php if($cnt) { ?>
-                
-                <!-- 첨부파일 끝 } -->
-                <?php } ?>
-            
-                <?php
-                if (implode('', $view['link'])) {
-                 ?>
-                 <!-- 관련링크 시작 { -->
-                <div id="bo_v_link">
-                    <h2><?php _e('관련링크', GC_NAME); //관련링크?></h2>
-                    <ul>
-                    <?php
-                    // 링크
-                    $cnt = 0;
-                    for ($i=1; $i<=count($view['link']); $i++) {
-                        if ($view['link'][$i]) {
-                            $cnt++;
-                            $link = gc_cut_str($view['link'][$i], 70);
-                     ?>
-                        <li>
-                            <a href="<?php echo esc_url( $view['link_href'][$i] ); ?>" target="_blank">
-                                <i class="fa fa-link" aria-hidden="true"></i> 관련링크
-                                <!-- <img src="<?php echo $board_skin_url ?>/img/icon_link.gif" alt="<?php _e('관련링크', GC_NAME); //관련링크?>"> -->
-                                <strong><?php echo $link ?></strong>
-                            </a>
-                            <span class="bo_v_link_cnt"><?php echo $view['link_hit'][$i] ?><?php _e('회', GC_NAME); //회?></span>
-                        </li>
-                    <?php
-                        }
-                    }
-                     ?>
-                    </ul>
-                </div>
-                <!-- } 관련링크 끝 -->
-            </div>
-        </section>
-    
-    <?php } ?>
-    </section>
-
-    <?php
-    if( count($tag_array) ){   //태그가 존재한다면
-        echo "<div class=\"bo-tags bo-tags-view\">";
-        foreach( $tag_array as $term ){
-            if( empty($term) ) continue;
-    ?>
-        <a href="<?php echo $term['href']?>"><?php echo $term['name'];?></a>
-    <?php
-        }
-        echo "</div>";
-    }
-    ?>
 
     <?php
     // 코멘트 입출력

@@ -46,7 +46,7 @@ $gc_ajax_nonce = wp_create_nonce( "item_form" );
                     echo '<div id="gc-bx-pager">';
                     foreach($it_images as $attachment_id) {
                         if( empty($attachment_id) ) continue;
-                        if( $thumb_src = wp_get_attachment_image($attachment_id, array(60,60)) ){
+                        if( $thumb_src = wp_get_attachment_image($attachment_id, array(110,110)) ){
                             echo '<a href="#" data-attachment_id="' . esc_attr( $attachment_id ) . '" data-slide-index="'.$thumb_count.'" class="popup_item_image img_thumb">'.$thumb_src.'<span class="sound_only"> '.$thumb_count.'번째 이미지 새창</span></a>';
                             $thumb_count++;
                         }
@@ -65,13 +65,17 @@ $gc_ajax_nonce = wp_create_nonce( "item_form" );
             </h2>
             <div id="sit_info">
                 <p id="sit_desc"><?php echo $it['it_basic']; ?></p>
-                            
+                <p class="sns_star">
+                    <?php if ($star_score) { ?>
+                    <img src="<?php echo GC_DIR_URL; ?>img/s_star<?php echo $star_score?>.png" alt="" class="sit_star">
+                    <?php } ?>
+                </p>            
                 <?php if($is_orderable) { ?>
                 <p id="sit_opt_info">
                     <?php echo sprintf(__('상품 선택옵션 %s 개, 추가옵션 %s 개', GC_NAME), $option_count, $supply_count); ?>
                 </p>
                 <?php } ?>
-            
+                
                 <ul class="sit_ov_box">
                     <?php if ($it['it_maker']) { ?>
                     <li>
@@ -186,11 +190,7 @@ $gc_ajax_nonce = wp_create_nonce( "item_form" );
                     </li>
                     <?php } ?>
                 </ul>
-                <p class="sns_star">
-                    <?php if ($star_score) { ?>
-                    <img src="<?php echo GC_DIR_URL; ?>img/s_star<?php echo $star_score?>.png" alt="" class="sit_star">
-                    <?php } ?>
-                </p>
+                
             </div>
             
             
@@ -272,15 +272,31 @@ $gc_ajax_nonce = wp_create_nonce( "item_form" );
 
             <div id="sit_ov_btn">
                 <?php if ($is_orderable) { ?>
-                <input type="submit" onclick="document.pressed=this.value;" value="<?php _e('바로구매', GC_NAME); ?>" id="sit_btn_buy" class="icon_buy_btn">
-                <input type="submit" onclick="document.pressed=this.value;" value="<?php _e('장바구니', GC_NAME); ?>" id="sit_btn_cart" class="icon_cart_btn">
+                <input type="submit" onclick="document.pressed=this.value;" value="<?php _e('바로구매', GC_NAME); ?>" id="sit_btn_buy">
+                <input type="submit" onclick="document.pressed=this.value;" value="<?php _e('장바구니', GC_NAME); ?>" id="sit_btn_cart">
                 
                 <?php } ?>
                 <?php if(!$is_orderable && $it['it_soldout'] && $it['it_stock_sms']) { ?>
-                <button type="button" data-itid="<?php echo $it['it_id']; ?>" title="<?php _e('상품 재입고알림 SMS', GC_NAME); ?>" id="sit_btn_buy" class="sms_alram"><i class="fa fa-bell sms_alram_icon" aria-hidden="true"></i> <?php _e('재입고알림', GC_NAME); ?></button>
+                <button type="button" data-itid="<?php echo $it['it_id']; ?>" title="<?php _e('상품 재입고알림 SMS', GC_NAME); ?>" id="sit_btn_buy" class="sms_alram"><?php _e('재입고알림', GC_NAME); ?></button>
                 <?php } ?>
-                <button type="button" onclick="gc_item_wish(document.fitem, '<?php echo $it['it_id']; ?>');" id="sit_btn_wish"><i class="fa fa-heart icon_wish_btn" aria-hidden="true"></i> <?php _e('위시리스트', GC_NAME); ?></button>
+                <button type="button" onclick="gc_item_wish(document.fitem, '<?php echo $it['it_id']; ?>');" id="sit_btn_wish" class="btn-grd"><i class="fa fa-heart" aria-hidden="true"></i><span class="sound_only"> <?php _e('위시리스트', GC_NAME); ?></span></button>
             </div>
+
+            <div id="sit_star_sns" >
+            <?php echo $sns_share_links; ?>
+            </div>
+            <!-- 다른 상품 보기 시작 { -->
+            <div id="sit_siblings">
+                <?php
+                if ($prev_href || $next_href) {
+                    echo '<span class="prev">' .$prev_href.$prev_title.$prev_href2.'</span>';
+                    echo '<span class="next">'.$next_href.$next_title.$next_href2.'</span>';
+                } else {
+                    echo '<span class="sound_only">'.__('이 분류에 등록된 다른 상품이 없습니다.', GC_NAME).'</span>';
+                }
+                ?>                    
+            </div>
+            <!-- } 다른 상품 보기 끝 -->
 
             <script>
             gnucommerce.wish_ing = false;
@@ -328,21 +344,7 @@ $gc_ajax_nonce = wp_create_nonce( "item_form" );
         </li>
     </ul>
     <!-- } 상품 요약정보 및 구매 끝 -->
-    <div id="sit_star_sns" >
-        <?php echo $sns_share_links; ?>
-    </div>
-    <!-- 다른 상품 보기 시작 { -->
-    <div id="sit_siblings">
-        <?php
-        if ($prev_href || $next_href) {
-            echo '<span class="prev">' .$prev_href.$prev_title.$prev_href2.'</span>';
-            echo '<span class="next">'.$next_href.$next_title.$next_href2.'</span>';
-        } else {
-            echo '<span class="sound_only">'.__('이 분류에 등록된 다른 상품이 없습니다.', GC_NAME).'</span>';
-        }
-        ?>                    
-    </div>
-    <!-- } 다른 상품 보기 끝 -->
+
 </div>
 </form>
 
@@ -363,6 +365,7 @@ jQuery(document).ready(function($) {
     <?php if( $it_images ){ ?>
     if (typeof $.fn.bxSlider !== 'undefined') {
         $('.gc_bxslider').bxSlider({
+            controls:true,
             pagerCustom: '#gc-bx-pager',
             swipeThreshold: 100,
             speed : 200,

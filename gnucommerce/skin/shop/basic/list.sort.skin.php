@@ -7,9 +7,9 @@ do_action( GC_NAME.'_skin_action', __FILE__, plugin_dir_path( __FILE__) );
 ?>
 
 <!-- 상품 정렬 선택 시작 { -->
-<section id="sct_sort">
+<section id="sct_sort" class="tab-wr">
     <h2>상품 정렬</h2>
-    <ul id="ssch_sort">
+    <ul id="ssch_sort" class="tabsTit">
         <li><a href="<?php echo add_query_arg( array('orderby'=>'it_sum_qty'), $sct_sort_href); ?>" >판매많은순</a></li>
         <li><a href="<?php echo add_query_arg( array('orderby'=>'price-asc'), $sct_sort_href); ?>">낮은가격순</a></li>
         <li><a href="<?php echo add_query_arg( array('orderby'=>'price'), $sct_sort_href); ?>">높은가격순</a></li>

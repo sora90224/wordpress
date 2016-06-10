@@ -28,47 +28,42 @@ $item_list->loop++;
         ?>
         <div class="sct_txt">
             <?php
-                if ($item_list->view_it_icon) {  //아이콘 표시 여부
-                    echo "<div class=\"sct_icon\">".gc_item_icon($goods)."</div>\n";
-                }
+
 
                 if( $item_list->view_it_name ){     //상품 이름을 표시
                      echo "<div class=\"sct_tit\">".the_title()."</div>\n";
                 }
 
-            if ($item_list->view_it_basic && $goods->it_basic){     //기본설명 표시
-                echo "<div class=\"sct_basic\">".esc_html($goods->it_basic)."</div>\n";
-            }
-
-            //가격( price ) 표시 
-            if ($item_list->view_it_cust_price || $item_list->view_it_price) {
-
-                echo "<div class=\"sct_cost\">\n";
-
-                if ($item_list->view_it_cust_price && $goods->it_cust_price) {
-                    echo "<strike>".gc_display_price($goods->it_cust_price)."</strike>\n";
+                if ($item_list->view_it_basic && $goods->it_basic){     //기본설명 표시
+                    echo "<div class=\"sct_basic\">".esc_html($goods->it_basic)."</div>\n";
                 }
 
-                if ($item_list->view_it_price) {
-                    echo gc_display_price(gc_get_price($goods), $goods->it_tel_inq)."\n";
-                }
+                //가격( price ) 표시 
+                if ($item_list->view_it_cust_price || $item_list->view_it_price) {
 
-                echo "</div>\n";
-            }
-        ?>
+                    echo "<div class=\"sct_cost\">\n";
+
+                    if ($item_list->view_it_cust_price && $goods->it_cust_price) {
+                        echo "<strike>".gc_display_price($goods->it_cust_price)."</strike>\n";
+                    }
+
+                    if ($item_list->view_it_price) {
+                        echo gc_display_price(gc_get_price($goods), $goods->it_tel_inq)."\n";
+                    }
+
+                    echo "</div>\n";
+                }
+                if ($item_list->view_it_icon) {  //아이콘 표시 여부
+                    echo "<div class=\"sct_icon\">".gc_item_icon($goods)."</div>\n";
+                }
+            ?>
+            
         </div>
         <?php do_action( 'gc_after_shop_loop_item_title', $goods, $item_list ); ?>
     </a>
-    <?php
-        if ($item_list->view_sns) {
-            $sns_url  = get_permalink($goods->ID);
-            $sns_title = gc_get_text($goods->it_name).' | '.get_bloginfo('name');
-            echo "<div class=\"sct_sns\">";
-                echo gc_get_sns_share_link('facebook', $sns_url, $sns_title, GC_SHOP_SKIN_URL.'/img/sns_fb_s.png');
-                echo gc_get_sns_share_link('twitter', $sns_url, $sns_title, GC_SHOP_SKIN_URL.'/img/sns_twt_s.png');
-                echo gc_get_sns_share_link('googleplus', $sns_url, $sns_title, GC_SHOP_SKIN_URL.'/img/sns_goo_s.png');
-            echo "</div>\n";
-        }
-    ?>
+    <div class="sct-btn">
+        <button type="button" class="btn-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="btn-txt">장바구니</span></button>
+        <button type="button" class="btn-wish"><i class="fa fa-heart" aria-hidden="true"></i>  <span class="btn-txt">위시리스트</span></button>
+    </div>
     <?php do_action( 'gc_after_shop_loop_item', $goods, $item_list ); ?>
 </<?php echo $tag; ?>>

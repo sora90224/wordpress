@@ -10,6 +10,7 @@ do_action('sir_comm_before_header');
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
@@ -24,6 +25,7 @@ do_action('sir_comm_before_header');
     <!-- bxSlider CSS file -->
     <link href="<?php bloginfo('template_url'); ?>/jquery.bxslider.css" rel="stylesheet" />
 	
+
 </head>
 
 <body <?php body_class(); ?>>

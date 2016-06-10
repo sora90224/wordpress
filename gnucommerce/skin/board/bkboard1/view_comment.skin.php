@@ -32,7 +32,9 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
             <!-- <?php if ($is_ip_view) { ?>
             아이피
             <span class="bo_vc_hdinfo"><?php echo $list[$i]['ip']; ?></span>
-            <span class="icon-comment-date icon-text">작성자</span><?php } ?><span class="bo_vc_hdinfo"><time datetime="<?php echo date('Y-m-d\TH:i:s+09:00', strtotime($list[$i]['datetime'])) ?>"><?php echo $list[$i]['datetime'] ?></time></span> -->
+            <?php } ?>
+            작성일
+            <span class="bo_vc_hdinfo"><time datetime="<?php echo date('Y-m-d\TH:i:s+09:00', strtotime($list[$i]['datetime'])) ?>"><?php echo $list[$i]['datetime'] ?></time></span> -->
         </header>
 
         <!-- 댓글 출력 -->
@@ -119,20 +121,17 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
         </tr>
         <?php } ?>
         <tr>
-            <th scope="row"><?php _e('내용', GC_NAME);    //내용?></th>
-            <td>
+            <td colspan="2" class="bo_vc_w_cmt "><span class="sound_only"><?php _e('내용', GC_NAME);    //내용?></span>
                 <?php if ($comment_min || $comment_max) { ?><strong id="char_cnt"><span id="char_count"></span> <?php _e('길이', GC_NAME);    //글자?></strong><?php } ?>
                 <textarea id="cm_content" name="cm_content" maxlength="10000" required class="required" title="내용"
                 <?php if ($comment_min || $comment_max) { ?>onkeyup="gc_check_byte('cm_content', 'char_count');"<?php } ?>><?php echo $cm_content;  ?></textarea>
-                <?php if ($comment_min || $comment_max) { ?><script> gc_check_byte('cm_content', 'char_count'); </script><?php } ?>
+                <?php if ($comment_min || $comment_max) { ?><script> gc_check_byte('cm_content', 'char_count'); </script><?php } ?> 
+                <input type="submit" id="btn_submit" class="btn_submit" value="<?php _e('댓글등록', GC_NAME);    //댓글등록?>">
+
             </td>
         </tr>
         </tbody>
         </table>
-    </div>
-
-    <div class="btn_confirm">
-        <input type="submit" id="btn_submit" class="btn_submit" value="<?php _e('댓글등록', GC_NAME);    //댓글등록?>">
     </div>
 
     </form>

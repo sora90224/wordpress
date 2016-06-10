@@ -13,7 +13,7 @@
     <footer id="colophon" class="site-footer" role="contentinfo">
         <div class="foot-inner"><!-- site-inner -->
             <?php if ( has_nav_menu( 'social' ) ) : ?>
-                <nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', SIR_CMM_NAME ); ?>">
+                <nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'sir-furniture' ); ?>">
                     <?php
                         wp_nav_menu( array(
                             'theme_location' => 'social',

@@ -2,13 +2,6 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 global $post;
 
-wp_enqueue_script('jquery');
-wp_enqueue_script('jquery-ui-core');
-wp_enqueue_script('jquery-ui-tabs');
-wp_enqueue_script( 'gnu_main_tabs_js', get_template_directory_uri() . '/js/tab.js', array( 'jquery-ui-tabs' ), 'true' );
-
-do_action( GC_NAME.'_skin_action', __FILE__, plugin_dir_path( __FILE__) );
-
 $ul_add_class = isset($args['ul_class']) ? $args['ul_class'] : '';
 ?>
 <ul id="<?php echo $args['tab_el_id'] ?>" class="<?php echo $ul_add_class;?>">
@@ -35,8 +28,8 @@ foreach($items as $post){
                 echo "<div class=\"sct-icon\">".gc_item_icon($post)."</div>\n";
             ?>
             <div class="sct-btn">
-                <button type="button" class="btn-cart" data-it_id="<?php echo $post->ID;?>"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="btn-txt"><?php _e('장바구니', SIR_THEME_NAME);?></span></button>
-                <button type="button" class="btn-wish" data-it_id="<?php echo $post->ID;?>"><i class="fa fa-heart" aria-hidden="true"></i>  <span class="btn-txt"><?php _e('위시리스트', SIR_THEME_NAME);?></span></button>
+                <button type="button" class="btn-cart" data-it_id="<?php echo $post->ID;?>"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="btn-txt"><?php _e('Cart', 'sir-furniture');?></span></button>
+                <button type="button" class="btn-wish" data-it_id="<?php echo $post->ID;?>"><i class="fa fa-heart" aria-hidden="true"></i>  <span class="btn-txt"><?php _e('Wishlist', 'sir-furniture');?></span></button>
             </div>
         </div>
         <div class="cart-layer"></div>

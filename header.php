@@ -31,7 +31,7 @@ do_action('sir_comm_before_header');
 <body <?php body_class(); ?>>
 <div id="page"><!-- class="site" -->
 	<!--<div> class="site-inner" -->
-		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', SIR_CMM_NAME ); ?></a>
+		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'sir-furniture' ); ?></a>
 
 		<header id="masthead" class="site-header" role="banner">
 
@@ -119,10 +119,10 @@ do_action('sir_comm_before_header');
                 <div class="site-inner">
                     <ul class="site-header-top-link">
                         <?php if( is_user_logged_in () ){   //로그인 했으면 ?>
-                        <li class="site-link-logout"><a href="<?php echo wp_logout_url(); ?>"><?php _e('로그아웃', SIR_CMM_NAME); ?></a></li>
+                        <li class="site-link-logout"><a href="<?php echo wp_logout_url(); ?>"><?php _e('로그아웃', 'sir-furniture'); ?></a></li>
                         <li class="site-link-mypage"><a href="<?php echo esc_url( home_url( '/' ) ); ?>my_page">마이페이지</a></li>
                         <?php } else {  //로그인 하지 않았다면 ?>
-                        <li class="site-link-login"><a href="<?php echo wp_login_url(); ?>"><?php _e('로그인', SIR_CMM_NAME); ?></a></li>
+                        <li class="site-link-login"><a href="<?php echo wp_login_url(); ?>"><?php _e('로그인', 'sir-furniture'); ?></a></li>
                         <?php } ?>
                     </ul> 
                 </div>
@@ -140,7 +140,7 @@ do_action('sir_comm_before_header');
 
                 <div id="site-header-menu" class="site-header-menu">
                     <?php if ( has_nav_menu( 'primary' ) ) : ?>
-                        <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', SIR_CMM_NAME ); ?>">
+                        <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'sir-furniture' ); ?>">
                             <?php
                                 wp_nav_menu( array(
                                     'theme_location' => 'primary',
@@ -151,7 +151,7 @@ do_action('sir_comm_before_header');
                     <?php endif; ?>
 
                     <?php if ( has_nav_menu( 'social' ) ) : ?>
-                        <nav id="social-navigation" class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', SIR_CMM_NAME ); ?>">
+                        <nav id="social-navigation" class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'sir-furniture' ); ?>">
                             <?php
                                 wp_nav_menu( array(
                                     'theme_location' => 'social',

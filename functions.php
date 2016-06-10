@@ -45,11 +45,11 @@ if ( ! function_exists( 'sircomm_setup' ) ) :
 function sircomm_setup() {
 
 	// wp-content/languages/theme-name/de_DE.mo
-	load_theme_textdomain( SIR_CMM_NAME, trailingslashit( WP_LANG_DIR ) . SIR_CMM_NAME );
+	load_theme_textdomain( 'sir-furniture', trailingslashit( WP_LANG_DIR ) . 'sir-furniture' );
 	// wp-content/themes/child-theme-name/languages/de_DE.mo
-	load_theme_textdomain( SIR_CMM_NAME, get_stylesheet_directory() . '/languages' );
+	load_theme_textdomain( 'sir-furniture', get_stylesheet_directory() . '/languages' );
 	// wp-content/themes/theme-name/languages/de_DE.mo
-	load_theme_textdomain( SIR_CMM_NAME, get_template_directory() . '/languages' );
+	load_theme_textdomain( 'sir-furniture', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -83,8 +83,8 @@ function sircomm_setup() {
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', SIR_CMM_NAME ),
-		'social'  => __( 'Social Links Menu', SIR_CMM_NAME ),
+		'primary' => __( 'Primary Menu', 'sir-furniture' ),
+		'social'  => __( 'Social Links Menu', 'sir-furniture' ),
 	) );
 
 	/*
@@ -151,9 +151,9 @@ add_action( 'after_setup_theme', 'sircomm_content_width', 0 );
  */
 function sircomm_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', SIR_CMM_NAME ),
+		'name'          => __( 'Sidebar', 'sir-furniture' ),
 		'id'            => 'sidebar-1',
-		'description'   => __( 'Add widgets here to appear in your sidebar.', SIR_CMM_NAME ),
+		'description'   => __( 'Add widgets here to appear in your sidebar.', 'sir-furniture' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -161,9 +161,9 @@ function sircomm_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Content Bottom 1', SIR_CMM_NAME ),
+		'name'          => __( 'Content Bottom 1', 'sir-furniture' ),
 		'id'            => 'sidebar-2',
-		'description'   => __( 'Appears at the bottom of the content on posts and pages.', SIR_CMM_NAME ),
+		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'sir-furniture' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -171,9 +171,9 @@ function sircomm_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Content Bottom 2', SIR_CMM_NAME ),
+		'name'          => __( 'Content Bottom 2', 'sir-furniture' ),
 		'id'            => 'sidebar-3',
-		'description'   => __( 'Appears at the bottom of the content on posts and pages.', SIR_CMM_NAME ),
+		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'sir-furniture' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -198,17 +198,17 @@ function sircomm_fonts_url() {
 	$subsets   = 'latin,latin-ext';
 
 	/* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Merriweather font: on or off', SIR_CMM_NAME ) ) {
+	if ( 'off' !== _x( 'on', 'Merriweather font: on or off', 'sir-furniture' ) ) {
 		$fonts[] = 'Merriweather:400,700,900,400italic,700italic,900italic';
 	}
 
 	/* translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Montserrat font: on or off', SIR_CMM_NAME ) ) {
+	if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'sir-furniture' ) ) {
 		$fonts[] = 'Montserrat:400,700';
 	}
 
 	/* translators: If there are characters in your language that are not supported by Inconsolata, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', SIR_CMM_NAME ) ) {
+	if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'sir-furniture' ) ) {
 		$fonts[] = 'Inconsolata:400';
 	}
 
@@ -279,8 +279,8 @@ function sircomm_scripts() {
 	wp_enqueue_script( 'sircomm-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20160412', true );
 
 	wp_localize_script( 'sircomm-script', 'screenReaderText', array(
-		'expand'   => __( 'expand child menu', SIR_CMM_NAME ),
-		'collapse' => __( 'collapse child menu', SIR_CMM_NAME ),
+		'expand'   => __( 'expand child menu', 'sir-furniture' ),
+		'collapse' => __( 'collapse child menu', 'sir-furniture' ),
 	) );
 }
 add_action( 'wp_enqueue_scripts', 'sircomm_scripts' );
@@ -418,6 +418,21 @@ function sircomm_widget_tag_cloud_args( $args ) {
 }
 add_filter( 'widget_tag_cloud_args', 'sircomm_widget_tag_cloud_args' );
 
-require 'classes/plugin_require.php';
-require 'inc/template-hooks.php';
-require 'inc/template-functions.php';
+if(! function_exists('is_gnucommerce_activated') ){
+    function is_gnucommerce_activated(){
+        return class_exists( 'GNUCommerce' ) ? true : false;
+    }
+}
+
+function sircomm_do_shortcode( $tag, array $atts = array(), $content = null ) {
+	global $shortcode_tags;
+
+	if ( ! isset( $shortcode_tags[ $tag ] ) ) {
+		return false;
+	}
+
+	return call_user_func( $shortcode_tags[ $tag ], $atts, $content, $tag );
+}
+
+require_once get_template_directory() . '/core/plugin_require.php';
+?>

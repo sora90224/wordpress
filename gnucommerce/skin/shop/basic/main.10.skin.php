@@ -3,8 +3,10 @@ if (!defined('GC_NAME')) exit; // 개별 페이지 접근 불가
 global $post;
 
 do_action( GC_NAME.'_skin_action', __FILE__, plugin_dir_path( __FILE__) );
+
+$ul_add_class = isset($args['ul_class']) ? $args['ul_class'] : '';
 ?>
-<ul class="gc_st_container main_10">
+<ul class="gc_st_container main_10 <?php echo $ul_add_class;?>">
 <!-- 상품진열 10 시작 { -->
 <?php
 $loop = 0;

@@ -125,7 +125,7 @@ function sircomm_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'color_scheme', array(
-		'label'    => __( 'Base Color Scheme', SIR_CMM_NAME ),
+		'label'    => __( 'Base Color Scheme', 'sir-furniture' ),
 		'section'  => 'colors',
 		'type'     => 'select',
 		'choices'  => sircomm_get_color_scheme_choices(),
@@ -140,7 +140,7 @@ function sircomm_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'page_background_color', array(
-		'label'       => __( 'Page Background Color', SIR_CMM_NAME ),
+		'label'       => __( 'Page Background Color', 'sir-furniture' ),
 		'section'     => 'colors',
 	) ) );
 
@@ -155,7 +155,7 @@ function sircomm_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
-		'label'       => __( 'Link Color', SIR_CMM_NAME ),
+		'label'       => __( 'Link Color', 'sir-furniture' ),
 		'section'     => 'colors',
 	) ) );
 
@@ -167,7 +167,7 @@ function sircomm_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'main_text_color', array(
-		'label'       => __( 'Main Text Color', SIR_CMM_NAME ),
+		'label'       => __( 'Main Text Color', 'sir-furniture' ),
 		'section'     => 'colors',
 	) ) );
 
@@ -179,7 +179,7 @@ function sircomm_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'secondary_text_color', array(
-		'label'       => __( 'Secondary Text Color', SIR_CMM_NAME ),
+		'label'       => __( 'Secondary Text Color', 'sir-furniture' ),
 		'section'     => 'colors',
 	) ) );
 }
@@ -248,7 +248,7 @@ function sircomm_get_color_schemes() {
 	 */
 	return apply_filters( 'sircomm_color_schemes', array(
 		'default' => array(
-			'label'  => __( 'Default', SIR_CMM_NAME ),
+			'label'  => __( 'Default', 'sir-furniture' ),
 			'colors' => array(
 				'#1a1a1a',
 				'#ffffff',
@@ -258,7 +258,7 @@ function sircomm_get_color_schemes() {
 			),
 		),
 		'dark' => array(
-			'label'  => __( 'Dark', SIR_CMM_NAME ),
+			'label'  => __( 'Dark', 'sir-furniture' ),
 			'colors' => array(
 				'#262626',
 				'#1a1a1a',
@@ -268,7 +268,7 @@ function sircomm_get_color_schemes() {
 			),
 		),
 		'gray' => array(
-			'label'  => __( 'Gray', SIR_CMM_NAME ),
+			'label'  => __( 'Gray', 'sir-furniture' ),
 			'colors' => array(
 				'#616a73',
 				'#4d545c',
@@ -278,7 +278,7 @@ function sircomm_get_color_schemes() {
 			),
 		),
 		'red' => array(
-			'label'  => __( 'Red', SIR_CMM_NAME ),
+			'label'  => __( 'Red', 'sir-furniture' ),
 			'colors' => array(
 				'#ffffff',
 				'#ff675f',
@@ -288,7 +288,7 @@ function sircomm_get_color_schemes() {
 			),
 		),
 		'yellow' => array(
-			'label'  => __( 'Yellow', SIR_CMM_NAME ),
+			'label'  => __( 'Yellow', 'sir-furniture' ),
 			'colors' => array(
 				'#3b3721',
 				'#ffef8e',

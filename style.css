@@ -296,7 +296,6 @@ input[type="submit"][disabled]:hover,
 input[type="submit"][disabled]:focus {
 	background: #1a1a1a;
 	border: 0;
-	/*border-radius: 2px;*/
 	color: #fff;
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 	font-weight: 700;
@@ -336,7 +335,6 @@ textarea {
 	background: #fff;
 	background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
 	border: none;
-	border-radius: 2px;
 	color: #686868;
 	padding: 0.625em 0.4375em;
 	width: 100%;
@@ -528,7 +526,7 @@ a:active {
 
 .main-navigation .current-menu-item > a,
 .main-navigation .current-menu-ancestor > a {
-	font-weight: 700;
+	font-weight: 700;color:#648be5
 }
 
 .main-navigation ul ul {
@@ -917,7 +915,7 @@ a:active {
     background: -webkit-linear-gradient(#79aaf3, #699cf1);
     background: -o-linear-gradient(#79aaf3, #699cf1);
     background: -moz-linear-gradient(#79aaf3, #699cf1);
-    background: linear-gradient(#79aaf3f, #699cf1);
+    background: linear-gradient(#79aaf3, #699cf1);
 }
 .site-header-top-link .site-link-login a,.site-header-top-link .site-link-mypage a{color:#fff;line-height:35px}
 
@@ -949,8 +947,8 @@ a:active {
 .footer-con h2{margin-bottom: 10px;font-size: 0.92em;color:#444;}
 #footer-cs a{display:block;color:#000;font-size:1.4em}
 #footer-cs a.mail {font-size: 1em;margin:3px 0}
-#footer-cs p{line-height:1.5em;font-size:11px}
-#footer-bank p{line-height:1.5em;}
+#footer-cs p{line-height:1.5em;font-size:11px;margin:0}
+#footer-bank p{line-height:1.5em;margin:0}
 #footer-notice li{}
 
 /* 메인 - main */
@@ -1137,7 +1135,7 @@ a:active {
 
 #side-login{background:#54607a;border:1px solid #e3e3e3;margin-bottom:20px;padding:10px}
 #side-login:after{display:block;visibility:hidden;clear:both;content:""}
-#side-login fieldset{border:none;margin:0;padding:;}
+#side-login fieldset{border:none;margin:0;}
 #side-login legend{display:block;width:100%;padding:15px 0 5px 0;color:#fff;}
 
 #side-login .avatar{font-size: 1em;color:#fff;text-align:center;line-height: 50px;}
@@ -1184,8 +1182,8 @@ a:active {
 .new_win .win_btn .btn_submit{padding: 0 10px;height: 35px;line-height: 35px;display: inline-block;text-align: center;background: #65a2f1;color: #fff;border: 1px solid #4d8ad9;width:100px}
 .new_win .win_btn .btn_submit:hover{background:#545f79;}
 .tbl_head01 tfoot td{background:#f3f3f3}
-
-
+.new_win #win_title{background:none}
+#point .tbl_wrap caption{padding:0;height:0;overflow:hidden}
 
 
 
@@ -1328,7 +1326,6 @@ blockquote:after,
 .widget {
 	border:1px solid #e3e3e3;
 	margin-bottom: 3.5em;
-	/*padding-top: 1.75em;*/
 	background:#fff;
 }
 
@@ -1341,10 +1338,7 @@ blockquote:after,
     padding:15px 0;
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 	font-size: 14px;
-	/*font-size: 1rem;*/
-	letter-spacing: button;
 	line-height: 1.3125;
-	/*margin: 0 0 1.75em;*/
 	text-transform: uppercase;
 	color:#525f78;
 	border-bottom:1px solid #e3e3e3
@@ -1468,7 +1462,6 @@ blockquote:after,
  * 11.1 - Header
  */
 
-.site-header {/*padding: 2.625em 7.6923%;*/}
 .site-header-top{border-bottom:1px solid #eaeaea}
 .site-header-top:after{display:block;visibility:hidden;clear:both;content:""}
 .site-header-top .site-header-top-link {float:right;margin:0;padding:0 5px;border-left:1px solid #eaeaea;border-right:1px solid #eaeaea}
@@ -1530,7 +1523,6 @@ blockquote:after,
 .menu-toggle:hover,
 .menu-toggle:focus {background:url(img/icon.png) -30px 12px  no-repeat;color: #fff;}
 
-/*.header-image {position:absolute;top:10px;left:10px;}*/
 .header-image a {display: block;}
 .header-image a:hover img,
 .header-image a:focus img {opacity: 0.85;}
@@ -1541,15 +1533,6 @@ blockquote:after,
 
 .site-main > article {margin-bottom:1.250em;position:relative;background:#fff;padding:20px;border:1px solid #e3e3e3}
 
-/*.entry-header,
-.entry-summary,
-.entry-content,
-.entry-footer,
-.page-content {
-	margin-right: 7.6923%;
-	margin-left: 7.6923%;
-}
-*/
 .entry-title {
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 	font-size: 1.25em;
@@ -2207,11 +2190,6 @@ body.search-no-results .page-header {
 	margin-bottom: 0;
 }
 
-/*.required {
-	color: #007acc;
-	font-family: Merriweather, Georgia, serif;
-}*/
-
 .comment-reply-title small {
 	font-size: 100%;
 }
@@ -2400,7 +2378,6 @@ p > video {
 	display: none;
 }
 
-
 /**
  * 13.0 - Multisites
  */
@@ -2502,9 +2479,6 @@ p > video {
 }
 
 
-
-
-
 /* 장바구니 */
 .sod_list .sod_li{background:#fff;}
 #sod_bsk_list #mod_option_frm form{background:#f7f7f7;border:1px solid #000}
@@ -2517,7 +2491,7 @@ button.btn_cancel{border-radius:2px}
 #sod_bsk_act a.btn01{background:#fff;width:200px;vertical-align: middle;display: inline-block;border: 1px solid #d3d3d3;color: #515151;font-weight: bold;vertical-align:middle;}
 #sod_bsk_act .btn_submit{border: 0;background: #65a2f1;border: 1px solid #4d8ad9;color: #fff;color: #fff;font-weight: bold;width:200px;vertical-align:middle;}
 #sod_bsk_act .btn_submit:hover,#sod_bsk_act .btn_submit:focus{background:#4d8ad9;;}
-#sod_bsk_act div .btn01{font-size:0.92em;padding:0 5px;height:30px;line-height:28px}
+#sod_bsk_act div .btn01{font-size:0.92em;padding:0 5px;height:30px;line-height:30px}
 
 /* 주문하기 */
 #sod_frm_orderer, #sod_frm_taker{margin-bottom:10px;}
@@ -2528,10 +2502,10 @@ button.btn_cancel{border-radius:2px}
 #display_pay_button .btn_submit{width:100px;border: 1px solid #4d8ad9;background: #65a2f1}
 #display_pay_button .btn_submit:hover,#display_pay_button .btn_submit:focus{background:#4d8ad9;}
 
-#sod_fin_no{background:#65a2f1;color:#fff;text-align:center;border-radius:2px;margin-bottom:10px}
+#sod_fin_no{background:#65a2f1;color:#fff;text-align:center;border-radius:5px;margin-bottom:10px}
 #sod_fin_list h2{padding:0;border:0;background:none;font-size:0.92em}
 #sod_fin_view h2,#sod_fin_tot h2,#sod_fin_cancel h2{clip: rect(1px, 1px, 1px, 1px);height: 1px;overflow: hidden;position: absolute !important;width: 1px;word-wrap: normal !important;}
-#sod_sts_wrap button.btn_frmline{height:32px;background:#fff;border:1px solid #d1d1d1;border-radius:2px;color:#007acc}
+#sod_sts_wrap button.btn_frmline{height:30px;background:#fff;border:1px solid #d1d1d1;color:#666}
 #sod_fin_tot{border-top:1px solid #e9e9e9;border:1px solid #e9e9e9;}
 #sod_fin_tot li strong{color:#fff}
 #sod_fin_cancel button{height:32px;background:#54607a;border:none;border-radius:2px;color:#fff}
@@ -2554,6 +2528,7 @@ button.btn_cancel{border-radius:2px}
 #od_coupon_frm .tbl_wrap table th, #sc_coupon_frm .tbl_wrap table th{background:#d3d3d3;border:1px solid #d3d3d3;text-align:center !important}
 .empty_cart_msg{background: #fff;padding: 100px 0;text-align:center}
 #display_pay_button .btn01{line-height:36px}
+a.btn_frmline, button.btn_frmline{background:#656363;font-size:0.92em}
 
 /*주문내역*/
 #sod_fin h3, #kcp_acc_test table caption{background:#d3d3d3}
@@ -2568,8 +2543,12 @@ button.btn_cancel{border-radius:2px}
 #sod_fin_cancelfrm .frm_input{width: 100%;height: 60px;margin-top: 5px;border:1px solid #e6e6e6}
 #sod_fin_cancelfrm .btn_frmline{background: #474747;padding: 5px;color: #fff;border: 0;position: absolute;bottom: 20px;right: 20px;width: 70px;height: 60px;}
 #sod_v_info{text-align:center;margin-bottom:10px;color:#666}
+#sod_frm_paysel {font-size:12px}
+#sod_frm_paysel .frm_input{width:auto}
+#settle_bank{background:#f3f3f3;padding:10px;margin-top:10px}
 
 /* 마이페이지 */
+.mypage_info_container #win_title,#coupon #win_title{border:0;font-size:1em;margin-bottom:5px}
 .mypage_info_container h2{background:none}
 .gc_myform_wrap .myform_msg{background:#d3d3d3;text-align:center;margin:0}
 .gc_myform_wrap .btn_group{text-align:center;}
@@ -2599,9 +2578,9 @@ button.btn_cancel{border-radius:2px}
 .bbs_scrap_ul li{background:#fff;margin-bottom:5px;padding:10px}
 .bbs_scrap_ul .scrap_date{right:10px}
 .point_input_box input.input{border:1px solid #d3d3d3}
-
+#mileage_ul{padding:0;margin:0}
 /*적립금*/
-#mileage_sum {padding: 0px 15px;background: #fff;border: 2px solid #d3d3d3;margin-top:20px}
+#mileage_sum {padding: 0px 15px;background: #fff;border: 2px solid #d3d3d3;margin:20px 0 0 }
 #mileage_sum .sum_row { border-bottom: 1px solid #eee;background:none}
 
 /* 사용후기 쓰기 팝업 */
@@ -2772,7 +2751,8 @@ button.btn_cancel{border-radius:2px}
     
     #idx-new-gallery li{width:21%;}
     
-    .footer-con{width:50%}
+    .footer-con{width:50%;padding:10px 0 20px}
+    #footer-notice{padding-bottom:0}
 
     /*쇼핑몰 메인*/
     #main-item .sct-btn .btn-txt{position: absolute;top:-999px;left:-999px;font-size: 0;line-height: 0;}
@@ -2888,17 +2868,8 @@ button.btn_cancel{border-radius:2px}
 
 	.custom-logo {max-width: 210px;}
 
-
-
 	.site-description {display: block;}
 
-/*	.menu-toggle {
-	    font-size: 16px;
-		font-size: 1.0rem;
-		margin:0.938em 0;
-		padding: 0.8125em 0.875em 0.6875em;
-	}
-*/
 	.site-header-menu {
         width:100%
 	}
@@ -3087,7 +3058,6 @@ button.btn_cancel{border-radius:2px}
 	.menu-toggle,
 	.site-header .social-navigation,
 	.site-footer .main-navigation {
-/*		display: none;*/
 	}
 
 	.site-content {}
@@ -3619,14 +3589,10 @@ button.btn_cancel{border-radius:2px}
 .content-area-shop{padding:20px}
 .content-area-shop header{text-align:center}
 .content-area-shop h1{border-bottom: 2px solid #000;padding-bottom: 3px;display:inline-block}
-
 .content-area-shop .empty_list{background:#fff;padding:100px 0 !important}
 
-
-
-
 /* 버튼 */
-a.btn02{background:#54607a;border:1px solid background:#54607a;}
+a.btn02{background:#54607a;border:1px solid ;background:#54607a;}
 a.btn02, .btn01{border-radius:2px}
 .btn-blue{background: #65a2f1;border: 1px solid #4d8ad9;color: #fff;font-weight:bold}
 .btn-grd{border: 1px solid #ccc;color: #fff;color: #666;
@@ -3637,3 +3603,7 @@ background: -moz-linear-gradient(#fff, #fff, #f1f1f1);
 background: linear-gradient(#fff,#fff, #f1f1f1)}
 .btn-grd:hover{background:#f3f3f3}
 
+@media only screen and (max-width : 600px) {
+    .gc_cart_table tbody tr {    border-bottom: 10px solid #fff;}
+    .new_win .tbl_wrap th, .new_win .tbl_wrap td{margin-top:-1px}
+}

@@ -143,7 +143,7 @@ ul.gc_title_head:after, .gc_doc_line:after{content:""; display:block; clear:both
 #bo_list .list_head_tags li a{border:0;display: inline-block;}
 #bo_list .list_head_tags li .tags-txt {display: inline-block;padding: 4px 10px;border: 1px solid #e5e9ee;border-right: 0;color: #666;background:#fff}
 #bo_list .list_head_tags li .tags-cnt {display: inline-block;padding: 4px 7px;border: 1px solid #e5e9ee;background: #f2f2f2;color: #666}
-#bo_list .list_head_tags li span{display: inline-block;height:32px;vertical-align:middle}
+#bo_list .list_head_tags li span{display: inline-block;vertical-align:middle}
 
 #bo_list span.bo-tags {display: inline-block;}
 #bo_list .bo-tags a {display: inline-block;color: #999;}
@@ -162,11 +162,11 @@ ul.gc_title_head:after, .gc_doc_line:after{content:""; display:block; clear:both
 
 /* 게시판 버튼 */
 /* 목록 버튼 */
-#bo_list a.btn_b01 {padding:7px 7px;border-radius:2px;background:#fff;line-height:16px}
+#bo_list a.btn_b01 {padding:7px 7px;background:#fff;line-height:16px}
 #bo_list a.btn_b01:focus, #bo_list a.btn_b01:hover {}
-#bo_list a.btn_b02 {padding:6px 7px;border-radius:2px}
+#bo_list a.btn_b02 {padding:6px 7px}
 #bo_list a.btn_b02:focus, #bo_list a.btn_b02:hover {}
-#bo_list a.btn_admin {padding:6px 7px;border-radius:2px} /* 관리자 전용 버튼 */
+#bo_list a.btn_admin {padding:6px 7px} /* 관리자 전용 버튼 */
 
 /* 읽기 버튼 */
 #bo_v a.btn_b01 {}
@@ -255,11 +255,8 @@ ul.gc_title_head:after, .gc_doc_line:after{content:""; display:block; clear:both
 
 /* 게시판용 버튼 */
 a.btn_b01 {display:inline-block;padding:8px 7px;border:1px solid #d9ded9;background:#f2f5f9;color:#000;text-decoration:none;vertical-align:middle}
-a.btn_b01:focus, a.btn_b01:hover {text-decoration:none;border:1px solid #d9ded9;}
 a.btn_b02 {display:inline-block;padding:8px 7px;background: #65a2f1;font-weight: bold;border: 1px solid #4d8ad9;color: #fff;vertical-align:middle}
-a.btn_b02:focus, a.btn_b02:hover {text-decoration:none;border:1px solid #3b3c3f;}
 a.btn_admin {display:inline-block;padding:7px;border:1px solid #e8180c;background:#e8180c;color:#fff;text-decoration:none;vertical-align:middle} /* 관리자 전용 버튼 */
-a.btn_admin:focus, a.btn_admin:hover {text-decoration:none;border:1px solid #e8180c;}
 
 /* 댓글 스타일 */
 .cnt_cmt {display:inline-block;margin:0 0 0 3px;font-weight:bold;color:#65a2f1;}
@@ -280,17 +277,26 @@ a.btn_admin:focus, a.btn_admin:hover {text-decoration:none;border:1px solid #e81
 #bo_list .txt_active {color:#5d910b}
 #bo_list .txt_expired {color:#ccc}
 
-#bo_cate{display:inline-block;margin-bottom:10px}
-#bo_cate h2 {position:absolute;font-size:0;line-height:0;overflow:hidden;display:none}
-#bo_cate ul {margin:0;margin-bottom:10px;padding-left:1px;zoom:1}
+#bo_cate{text-align:center;margin-bottom:10px}
+#bo_cate h2 {width:0;height:0;font-size:0;line-height:0;overflow:hidden;width:0;padding:0;border:0}
+#bo_cate ul {padding-left:1px;margin:0;display:inline-block;;zoom:1}
 #bo_cate ul:after {display:block;visibility:hidden;clear:both;content:""}
-#bo_cate li {margin:0;padding:0;float:left;margin-bottom:-1px;list-style:none}
-#bo_cate a {display:block;position:relative;margin-left:-1px;padding:6px 1em 5px;width:auto;min-width:70px;border:1px solid #ddd;background:#f7f7f7;color:#888;text-align:center;letter-spacing:-0.1em;line-height:1.2em;cursor:pointer}
+#bo_cate li {float:left;margin-bottom:-1px;list-style:none}
+#bo_cate a {text-overflow: ellipsis;overflow: hidden;white-space: nowrap;display:block;position:relative;margin-left:-1px;padding: 0 10px;height:40px;line-height:38px;border:1px solid #d8d8d8;background:#fff;color:#888;text-align:center;text-decoration:none;min-width:80px}
 #bo_cate a:focus, #bo_cate a:hover, #bo_cate a:active {text-decoration:none}
-#bo_cate #bo_cate_on {z-index:2;border:1px solid #87a4f2;background:#fff;color:#565e60;font-weight:bold}
+#bo_cate #bo_cate_on {z-index:2;border:1px solid #333;background:#333;color:#fff;font-weight:bold}
 
 .td_subject img {margin:0;margin-left:3px}
 
+@media (max-width: 970px){
+    #bo_cate ul{width:100%}
+    #bo_cate li {width:20%;}
+}
+
+@media (max-width: 640px){
+    #bo_cate li {width:33.3333%}
+    #bo_cate a{min-width:auto}
+}
 /* 게시판 목록 공통 */
 
 .bo_fx {display:inline-block;width:100%;margin-bottom:9px;zoom:1;}
@@ -303,7 +309,7 @@ a.btn_admin:focus, a.btn_admin:hover {text-decoration:none;border:1px solid #e81
 .btn_bo_adm {float:left}
 .btn_bo_adm li {float:left;margin-left:5px}
 .btn_bo_adm input,
-.btn_bo_adm button{padding:9px 8px!important;border:0;background:#e8180c;border-radius:2px;color:#fff;text-decoration:none;vertical-align:middle;font-weight:normal}
+.btn_bo_adm button{padding:9px 8px!important;border:0;background:#e8180c;color:#fff;text-decoration:none;vertical-align:middle;font-weight:normal}
 .bo_notice td {background:#f5f6fa}
 .bo_notice td a{font-weight:bold}
 .td_num strong {padding:4px;color:#fff;background:tomato;border-radius:12px;}
@@ -325,6 +331,7 @@ fieldset#bo_sch{border:0;padding: 20px 0 ;}
 #char_count_desc {display:block;margin:0 0 5px;padding:0}
 #char_count_wrap {margin:5px 0 0;text-align:right}
 #char_count {font-weight:bold}
+.wp-editor-container{border:1px solid #ddd}
 
 /* 게시판 읽기 */
 #bo_v {margin-bottom:20px;padding-bottom:20px;text-align:left}
@@ -425,7 +432,7 @@ fieldset#bo_sch{border:0;padding: 20px 0 ;}
 #bo_vc a {color:#000;text-decoration:none}
 #bo_vc p {padding:15px;line-height:1.8em;text-align:left}
 #bo_vc p a {text-decoration:underline}
-#bo_vc_empty {margin:0;padding:20px !important;text-align:center}
+#bo_vc #bo_vc_empty {margin:0;padding:20px !important;text-align:center}
 #bo_vc #bo_vc_winfo {float:left}
 #bo_vc footer {zoom:1;float:none;width:100%;padding: 0 15px 20px}
 #bo_vc .bo_vc_act a{padding: 7px;font-size:0.92em;background: #e8e8e8;}
@@ -483,6 +490,8 @@ min-height:auto;
 @media screen and (max-width: 640px) {
     .tbl_wrap .wr_datetime {display:none}
     #bo_sch select{width:auto}
+    .bo_fx i{display:none}
+    .bo_v_com i{display:none}
 }
 
 @media screen and (max-width: 500px) {
@@ -496,3 +505,5 @@ min-height:auto;
 #pw_confirm p{font-weight:normal;font-size:0.813em;text-align:center}
 #pw_confirm #password_user_pass{width:70%;height:30px;margin-left:10px;}
 #pw_confirm .btn_submit{height:30px;border-radius:3px;background:#545f79;font-weight:normal;}
+
+

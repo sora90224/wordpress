@@ -239,7 +239,7 @@ ul.gc_title_head:after, .gc_doc_line:after{content:""; display:block; clear:both
 .tbl_frm01 textarea, .frm_input {border:1px solid #e4eaec;background:#f7f7f7;color:#000;vertical-align:middle;line-height:2em}
 .tbl_frm01 textarea {margin:0;padding:2px 2px 3px}
 .tbl_frm01 .frm_input {margin:0;padding:0;font-size:1em}
-.tbl_frm01 input[type="password"].frm_input, .tbl_frm01 input[type="text"].frm_input{width:auto;padding:6px 12px !important;height:auto;border: 1px solid #e4eaec;border-radius:4px;color: #555;vertical-align:middle;line-height:1.5}
+.tbl_frm01 input[type="password"].frm_input, .tbl_frm01 input[type="text"].frm_input{width:auto;padding:6px 12px !important;height:auto;border: 1px solid #e4eaec;color: #555;vertical-align:middle;line-height:1.5;background:#f3f3f3}
 .tbl_frm01 textarea {width:100%;height:80px;font-size:1em}
 .tbl_frm01 a {text-decoration:none}
 .tbl_frm01 .frm_file {display:block;margin-bottom:5px}
@@ -252,7 +252,7 @@ ul.gc_title_head:after, .gc_doc_line:after{content:""; display:block; clear:both
 #bo_gall .list_head_tags li a{border:0;display: inline-block;}
 #bo_gall .list_head_tags li .tags-txt {padding: 4px 10px;border: 1px solid #e5e9ee;border-right: 0;color: #666;background:#fff}
 #bo_gall .list_head_tags li .tags-cnt {padding: 4px 7px;border: 1px solid #e5e9ee;background: #f2f2f2;color: #666}
-#bo_gall .list_head_tags li span{display: inline-block;height:32px;vertical-align:middle}
+#bo_gall .list_head_tags li span{display: inline-block;vertical-align:middle}
 
 #bo_gall span.bo-tags {display: inline-block;}
 #bo_gall .bo-tags a {display: inline-block;color: #999;}
@@ -274,9 +274,9 @@ ul.gc_title_head:after, .gc_doc_line:after{content:""; display:block; clear:both
 /* 목록 버튼 */
 #bo_list a.btn_b01 {padding:8px 7px;}
 #bo_gall a.btn_b01:focus, #bo_gall a.btn_b01:hover {}
-#bo_gall a.btn_b02 {padding:8px 7px;border-radius:2px;border:none}
+#bo_gall a.btn_b02 {padding:8px 7px;border:none}
 #bo_gall a.btn_b02:focus, #bo_gall a.btn_b02:hover {}
-#bo_gall a.btn_admin {padding:8px 7px;border-radius:2px;border:none;} /* 관리자 전용 버튼 */
+#bo_gall a.btn_admin {padding:8px 7px;border:none;} /* 관리자 전용 버튼 */
 #bo_gall a.btn_admin:focus, #bo_gall .btn_admin:hover {}
 
 /* 읽기 버튼 */
@@ -365,7 +365,7 @@ a.btn_admin:focus, a.btn_admin:hover {text-decoration:none;border:1px solid #e81
 #bo_cate h2 {width:0;height:0;font-size:0;line-height:0;overflow:hidden}
 #bo_cate ul {padding-left:1px;margin:0;display:inline-block;;zoom:1}
 #bo_cate ul:after {display:block;visibility:hidden;clear:both;content:""}
-#bo_cate li {float:left;margin-bottom:-1px;}
+#bo_cate li {float:left;margin-bottom:-1px;list-style:none}
 #bo_cate a {text-overflow: ellipsis;overflow: hidden;white-space: nowrap;display:block;position:relative;margin-left:-1px;padding: 0 10px;height:40px;line-height:38px;border:1px solid #d8d8d8;background:#fff;color:#888;text-align:center;text-decoration:none;min-width:80px}
 #bo_cate a:focus, #bo_cate a:hover, #bo_cate a:active {text-decoration:none}
 #bo_cate #bo_cate_on {z-index:2;border:1px solid #333;background:#333;color:#fff;font-weight:bold}
@@ -387,7 +387,7 @@ a.btn_admin:focus, a.btn_admin:hover {text-decoration:none;border:1px solid #e81
 #bo_gall #gall_ul {margin:0 -10px ;zoom:1;}
 #bo_gall #gall_ul:after {display:block;visibility:hidden;clear:both;content:""}
 #bo_gall .gall_li input{position:absolute;top:10px;left:20px;z-index:999}
-#bo_gall #chkall{position:absolute;top:20px;right:20px;z-index:999}
+#bo_gall #gall_allchk{text-align:left;margin-bottom:10px}
 #bo_gall #gall_ul .empty_list{list-style:none;text-align:center;padding:20px 0;margin:0 10px 10px}
 #bo_gall .box_clear{clear:both!important;}
 
@@ -429,7 +429,7 @@ a.btn_admin:focus, a.btn_admin:hover {text-decoration:none;border:1px solid #e81
 .btn_bo_adm {float:left}
 .btn_bo_adm li {float:left;margin-left:5px}
 .btn_bo_adm input,
-.btn_bo_adm button{padding:10px 8px !important;border:0;background:#e8180c;color:#fff;border-radius:2px;text-decoration:none;vertical-align:middle;font-weight:normal}
+.btn_bo_adm button{padding:10px 8px !important;border:0;background:#e8180c;color:#fff;text-decoration:none;vertical-align:middle;font-weight:normal}
 .bo_notice td {background:#f5f6fa}
 .bo_notice td a {font-weight:bold}
 .td_num strong {color:#000}
@@ -444,13 +444,14 @@ fieldset#bo_sch{border:0;;padding: 20px 0 ;}
 #bo_sch select{margin:0;height:auto !important;vertical-align:middle;font-size:1em;width:auto;}
 #bo_sch select[name="sfl"]{display:inline-block;height:30px !important;width:auto;padding-top:2px;padding-bottom:2px;border:1px solid #e4e4e4}
 #bo_sch input[type="text"].frm_input{display:inline-block;margin:0;padding:2px !important;width:98px;height:30px;min-height:auto;outline:0;border:1px solid #e4eaec;vertical-align:middle;font-size:1em;line-height:1em;background:#fff}
-#bo_sch input[type="submit"].btn_submit{margin:0;vertical-align:middle;height:30px !important;min-width:auto;min-height:auto;padding:.5em .8em !important;font-size:1em;height:auto;line-height:1em;border-radius:2px;background:#65a2f1}
+#bo_sch input[type="submit"].btn_submit{margin:0;vertical-align:middle;height:30px !important;min-width:auto;min-height:auto;padding:.5em .8em !important;font-size:1em;height:auto;line-height:1em;background:#65a2f1}
 #bo_sch input[type="submit"].btn_submit:hover{background:#4b545e}
 
 /* 게시판 쓰기 */
 #char_count_desc {display:block;margin:0 0 5px;padding:0}
 #char_count_wrap {margin:5px 0 0;text-align:right}
 #char_count {font-weight:bold}
+.wp-editor-container{border:1px solid #ddd}
 
 /* 게시판 읽기 */
 #bo_v {margin-bottom:20px;padding-bottom:20px}
@@ -647,6 +648,8 @@ min-height:auto;
     #bo_gall .box_clear{clear:none!important}
 
     #bo_sch select[name="sfl"] {width:120px}
+    .bo_fx i{display:none}
+    .bo_v_com i{display:none}
 }
 
 @media (max-width: 380px) {

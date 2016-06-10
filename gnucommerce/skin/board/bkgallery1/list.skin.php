@@ -63,8 +63,8 @@ if (!defined('ABSPATH')) exit; // 개별 페이지 접근 불가
 
     <?php if ($is_checkbox) { ?>
     <div id="gall_allchk">
-        <label for="chkall" class="sound_only"><?php _e('현재 페이지 게시물 전체', GC_NAME);  //현재 페이지 게시물 전체?></label>
         <input type="checkbox" id="chkall" onclick="if (this.checked) all_checked(true); else all_checked(false);">
+        <label for="chkall"><?php _e('게시물 전체', GC_NAME);  //현재 페이지 게시물 전체?></label>
     </div>
     <?php } ?>
 

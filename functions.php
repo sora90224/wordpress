@@ -81,9 +81,12 @@ function sircomm_setup() {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 1200, 9999 );
 
-	// This theme uses wp_nav_menu() in two locations.
+	// menu add register
 	register_nav_menus( array(
+        'pre_header_menu'   =>  __( 'Header Menu', 'sir-furniture' ),
 		'primary' => __( 'Primary Menu', 'sir-furniture' ),
+        'sub_footer_menu' => __( 'Footer Menu', 'sir-furniture' ),
+        'sidebar_menu' => __( 'Sidebar Menu', 'sir-furniture' ),
 		'social'  => __( 'Social Links Menu', 'sir-furniture' ),
 	) );
 
@@ -432,6 +435,53 @@ function sircomm_do_shortcode( $tag, array $atts = array(), $content = null ) {
 	}
 
 	return call_user_func( $shortcode_tags[ $tag ], $atts, $content, $tag );
+}
+
+if(! function_exists('sirfurniture_gnucommerce_get_by') ){
+
+    function sirfurniture_gnucommerce_get_by($type=''){
+
+        if( !is_gnucommerce_activated() ){
+            return '';
+        }
+
+        switch ($type){
+            case 'carturl' :
+                return gc_get_page_url('cart');
+                break;
+        }
+
+        return '';
+
+    }
+
+}
+
+function sirfurniture_first_and_last($output) {
+    $output = preg_replace('/class="menu-item/', 'class="first-menu-item menu-item', $output, 1);
+    $output = substr_replace($output, 'class="', strripos($output, 'class="border-deco'), strlen('class="border-deco'));
+    return $output;
+}
+
+function sirfurniture_mypage_print(){
+
+    if( is_gnucommerce_activated() ){
+        echo '<a href="'.gc_get_page_url('mypage').'">'.__('Mypage', 'sir-furniture').'</a>';
+    } else {
+        if( is_user_logged_in() ){
+            $user_id      = get_current_user_id();
+            $current_user = wp_get_current_user();
+
+            if ( current_user_can( 'read' ) ) {
+                $profile_url = get_edit_profile_url( $user_id );
+            } elseif ( is_multisite() ) {
+                $profile_url = get_dashboard_url( $user_id, 'profile.php' );
+            } else {
+                $profile_url = '#';
+            }
+        }
+        echo '<a href="'.$profile_url.'">'.__('Edit My Profile', 'sir-furniture').'</a>';
+    }
 }
 
 require_once get_template_directory() . '/core/plugin_require.php';

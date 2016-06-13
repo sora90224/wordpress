@@ -13,14 +13,6 @@ foreach($items as $post){
 
     $classes = array();
 
-    /*
-    $classes[] = 'col-yc-'.$list_mod;
-
-    if( $loop && ($loop % $list_mod == 0) ){
-        $classes[] = 'box_clear';
-    }
-    */
-
     $loop++;
 ?>
     <li <?php post_class( $classes, $post->ID ); ?>>

@@ -13,10 +13,11 @@ get_header(); ?>
 	    
         <?php
         /*
-         *  @gnusmmt_shop_main_banner   hook 20
-         *  @gnusmmt_shop_sub_banner    hook 25
-         *  @gnusmmt_latest_gnucommerce_shop    hook 26
-         *  @gnusmmt_latest_gnucommerce_shop_type    hook 30
+         *  @sirfurniture_shop_main_banner   hook 20
+         *  @sirfurniture_shop_sub_banner    hook 25
+         *  @sirfurniture_latest_gnucommerce_shop    hook 26
+         *  @sirfurniture_main_widget_area    hook 30
+         *  @sirfurniture_latest_gnucommerce_shop_type    hook 40
         */
         do_action( 'homepage' );
         ?>

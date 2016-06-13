@@ -8,6 +8,8 @@ if( !$item_list->loop ){
 $classes = array();
 
 $classes[] = 'col-gn-'.$config['product_gallery_cols'];
+$classes[] = 'gnucommerce-ajax-cart';
+$classes[] = 'sct-li';
 
 if( $item_list->loop && ($item_list->loop % $config['product_gallery_cols'] == 0) ){
     $classes[] = 'box_clear';
@@ -60,8 +62,9 @@ $item_list->loop++;
         <?php do_action( 'gc_after_shop_loop_item_title', $goods, $item_list ); ?>
     </a>
     <div class="sct-btn">
-        <button type="button" class="btn-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="btn-txt">장바구니</span></button>
-        <button type="button" class="btn-wish"><i class="fa fa-heart" aria-hidden="true"></i>  <span class="btn-txt">위시리스트</span></button>
+        <button type="button" class="btn-cart" data-it_id="<?php echo $post->ID;?>"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="btn-txt"><?php _e('Cart', 'sir-furniture');?></span></button>
+        <button type="button" class="btn-wish" data-it_id="<?php echo $post->ID;?>"><i class="fa fa-heart" aria-hidden="true"></i>  <span class="btn-txt"><?php _e('Wishlist', 'sir-furniture');?></span></button>
     </div>
+    <div class="cart-layer"></div>
     <?php do_action( 'gc_after_shop_loop_item', $goods, $item_list ); ?>
 </<?php echo $tag; ?>>

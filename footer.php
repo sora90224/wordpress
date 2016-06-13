@@ -43,7 +43,7 @@
                 <div id="footer-info" class="footer-con">
                     <?php if ( sirfurniture_get_option('sir_enable_footer1') == 'on' || !sirfurniture_get_option('sir_enable_footer1') ) : ?>
                     <h2><?php echo esc_html(sirfurniture_get_option('sir_footer_info_title','INFO')); ?></h2>
-                    <?php echo nl2br(esc_html(sirfurniture_get_option('sir_footer_info_text','INFO'))); ?>
+                    <?php echo nl2br(esc_html(sirfurniture_get_option('sir_footer_info_text', sirfurniture_footer_default_content_by('footer1')))); ?>
                     <?php endif; ?>
                     <?php do_action( 'sirfurniture_footer1' ); ?>
                 </div>
@@ -51,15 +51,15 @@
                     <?php if ( sirfurniture_get_option('sir_enable_footer2') == 'on' || !sirfurniture_get_option('sir_enable_footer2') ) : ?>
                     <h2><?php echo esc_html(sirfurniture_get_option('sir_footer_2_info_title','CS CENTER')); ?></h2>
                     <a href="tel:<?php echo esc_attr(sirfurniture_get_option('sir_footer_2_phone','02-123-1234')); ?>"><i class="fa fa-phone" aria-hidden="true"></i> <?php echo esc_attr(sirfurniture_get_option('sir_footer_2_phone','02-123-1234')); ?></a>
-                    <a href="mailto:<?php echo sanitize_email(sirfurniture_get_option('sir_footer_2_mail','abc@abc.com<')); ?>" class="mail"><i class="fa fa-envelope" aria-hidden="true"></i> <?php echo sanitize_email(sirfurniture_get_option('sir_footer_2_mail','abc@abc.com<')); ?></a>
-                    <p><?php echo nl2br(esc_html(sirfurniture_get_option('sir_footer_2_info_text','cs_center_text'))); ?></p>
+                    <a href="mailto:<?php echo sanitize_email(sirfurniture_get_option('sir_footer_2_mail','abc@abc.com')); ?>" class="mail"><i class="fa fa-envelope" aria-hidden="true"></i> <?php echo sanitize_email(sirfurniture_get_option('sir_footer_2_mail','abc@abc.com')); ?></a>
+                    <p><?php echo nl2br(esc_html(sirfurniture_get_option('sir_footer_2_info_text', sirfurniture_footer_default_content_by('footer2')))); ?></p>
                     <?php endif; ?>
                     <?php do_action( 'sirfurniture_footer2' ); ?>
                 </div>
                 <div id="footer-bank" class="footer-con">
                     <?php if ( sirfurniture_get_option('sir_enable_footer3') == 'on' || !sirfurniture_get_option('sir_enable_footer3') ) : ?>
                     <h2><?php echo esc_html(sirfurniture_get_option('sir_footer_3_info_title','BANK INFO')); ?></h2>
-                    <p><?php echo nl2br(esc_html(sirfurniture_get_option('sir_footer_3_info_text','INFO'))); ?></p>
+                    <p><?php echo nl2br(esc_html(sirfurniture_get_option('sir_footer_3_info_text', sirfurniture_footer_default_content_by('footer3')))); ?></p>
                     <?php endif; ?>
                     <?php do_action( 'sirfurniture_footer3' ); ?>
                 </div>

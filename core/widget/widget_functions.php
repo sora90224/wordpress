@@ -16,7 +16,7 @@ function sirfurniture_widgets_init() {
     register_sidebar( array(
         'name'          => __( 'Main #1', 'sir-furniture' ),
         'id'            => 'main-widget-1',
-        'description' 		=> __('Appears at the Main #1 of the content on posts and pages.', 'sir-furniture' ),
+        'description' 		=> __('Appears at the Main #1', 'sir-furniture' ),
         'before_widget' => '<div class="main_widget">',
         'after_widget'  => '<div>',
         'before_title'  => '',
@@ -26,7 +26,7 @@ function sirfurniture_widgets_init() {
     register_sidebar( array(
         'name'          => __( 'Footer #1', 'sir-furniture' ),
         'id'            => 'footer-widget-1',
-        'description' 		=> __('Appears at the Footer #1 of the content on posts and pages.', 'sir-furniture' ),
+        'description' 		=> __('Appears at the Footer #1', 'sir-furniture' ),
         'before_widget' => '<div class="footer_widget">',
         'after_widget'  => '<div>',
         'before_title'  => '<h2>',
@@ -36,7 +36,7 @@ function sirfurniture_widgets_init() {
     register_sidebar( array(
         'name'          => __( 'Footer #2', 'sir-furniture' ),
         'id'            => 'footer-widget-2',
-        'description' 		=> __('Appears at the Footer #2 of the content on posts and pages.', 'sir-furniture' ),
+        'description' 		=> __('Appears at the Footer #2', 'sir-furniture' ),
         'before_widget' => '<div class="footer_widget">',
         'after_widget'  => '<div>',
         'before_title'  => '<h2>',
@@ -46,7 +46,7 @@ function sirfurniture_widgets_init() {
     register_sidebar( array(
         'name'          => __( 'Footer #3', 'sir-furniture' ),
         'id'            => 'footer-widget-3',
-        'description' 		=> __('Appears at the Footer #3 of the content on posts and pages.', 'sir-furniture' ),
+        'description' 		=> __('Appears at the Footer #3', 'sir-furniture' ),
         'before_widget' => '<div class="footer_widget">',
         'after_widget'  => '<div>',
         'before_title'  => '<h2>',
@@ -56,7 +56,7 @@ function sirfurniture_widgets_init() {
     register_sidebar( array(
         'name'          => __( 'Footer #4', 'sir-furniture' ),
         'id'            => 'footer-widget-4',
-        'description' 		=> __('Appears at the Footer #4 of the content on posts and pages.', 'sir-furniture' ),
+        'description' 		=> __('Appears at the Footer #4', 'sir-furniture' ),
         'before_widget' => '<div class="footer_widget">',
         'after_widget'  => '<div>',
         'before_title'  => '<h2>',

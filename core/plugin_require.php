@@ -96,7 +96,7 @@ function sir_comm_add_enqueue_styles() {
     );
     
     // Add script
-    wp_enqueue_script( 'sir_comm_mainjs', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), 'true' );
+    wp_enqueue_script( 'sir_comm_mainjs', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), false, true );
 }
 
 if ( !class_exists( 'SIR_register_required_plugins' ) ) :

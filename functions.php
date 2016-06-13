@@ -427,15 +427,39 @@ if(! function_exists('is_gnucommerce_activated') ){
     }
 }
 
-function sircomm_do_shortcode( $tag, array $atts = array(), $content = null ) {
-	global $shortcode_tags;
+if(! function_exists('is_gnucommerce_page') ){
+    function is_gnucommerce_page(){
+        if( is_gnucommerce_activated() ){
+            if( gc_is_shop_archive() ){
+                return true;
+            }
+            $gc_options = get_option(GC_OPTION_KEY);
+            $checks = array('product_page_id', 'cart_page_id', 'checkout_page_id', 'mypage_page_id');
 
-	if ( ! isset( $shortcode_tags[ $tag ] ) ) {
-		return false;
-	}
+            foreach( $checks as $v ){
+                if( isset($gc_options[$v]) && !empty($gc_options[$v]) ){
+                    if( get_the_ID () == $gc_options[$v] ){
+                        return true;
+                    }
+                }
+            }
+        }
 
-	return call_user_func( $shortcode_tags[ $tag ], $atts, $content, $tag );
+        return false;
+    }
 }
+
+if(! function_exists('sircomm_do_shortcode') ){
+    function sircomm_do_shortcode( $tag, array $atts = array(), $content = null ) {
+        global $shortcode_tags;
+
+        if ( ! isset( $shortcode_tags[ $tag ] ) ) {
+            return false;
+        }
+
+        return call_user_func( $shortcode_tags[ $tag ], $atts, $content, $tag );
+    }
+}   //end if function
 
 if(! function_exists('sirfurniture_gnucommerce_get_by') ){
 
@@ -455,13 +479,28 @@ if(! function_exists('sirfurniture_gnucommerce_get_by') ){
 
     }
 
-}
+}   //end if function
 
-function sirfurniture_first_and_last($output) {
-    $output = preg_replace('/class="menu-item/', 'class="first-menu-item menu-item', $output, 1);
-    $output = substr_replace($output, 'class="', strripos($output, 'class="border-deco'), strlen('class="border-deco'));
-    return $output;
-}
+
+if(! function_exists('sirfurniture_first_and_last') ){
+    function sirfurniture_first_and_last($output) {
+        $output = preg_replace('/class="menu-item/', 'class="first-menu-item menu-item', $output, 1);
+        $output = substr_replace($output, 'class="', strripos($output, 'class="border-deco'), strlen('class="border-deco'));
+        return $output;
+    }
+}   //end if function
+
+if(! function_exists('sirfurniture_footer_default_content_by') ){
+    function sirfurniture_footer_default_content_by($type){
+        if( $type == 'footer1' ){
+            return "서울특별시 강남구 강남대로 123, 역삼동 1004호\nT.02-1234-5678\nF.02-1234-5678";
+        } else if ($type=='footer2'){
+            return "월-금 am 11:00 - pm 05:00\n점심시간 : am 12:00 - pm 01:00";
+        } else if ($type=='footer3'){
+            return "국민은행 : 123456-00-123456\n예금주: 홍길동";
+        }
+    }
+}   //end if function
 
 function sirfurniture_mypage_print(){
 

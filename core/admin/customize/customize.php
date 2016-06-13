@@ -476,7 +476,7 @@ if (!function_exists('sirfurniture_customize_panel_function')) {
 				"id" => "sir_footer_info_text",
 				"type" => "textarea",
 				"section" => "footer_1_section",
-				"std" => "info_text",
+				"std" => sirfurniture_footer_default_content_by('footer1'),
 
 			),
 
@@ -548,7 +548,7 @@ if (!function_exists('sirfurniture_customize_panel_function')) {
 				"id" => "sir_footer_2_info_text",
 				"type" => "textarea",
 				"section" => "footer_2_section",
-				"std" => "cs_center_text",
+				"std" => sirfurniture_footer_default_content_by('footer2'),
 
 			),
 
@@ -595,7 +595,7 @@ if (!function_exists('sirfurniture_customize_panel_function')) {
 				"id" => "sir_footer_3_info_text",
 				"type" => "textarea",
 				"section" => "footer_3_section",
-				"std" => "info_text",
+				"std" => sirfurniture_footer_default_content_by('footer3'),
 
 			),
 		);

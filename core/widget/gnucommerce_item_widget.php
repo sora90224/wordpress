@@ -21,7 +21,7 @@ class sir_latest_item_widget extends SIR_COMM_Widget {
 		$this->settings           = array(
 			'title'  => array(
 				'type'  => 'text',
-				'std'   => __( '', 'sir-furniture' ),
+				'std'   => '',
 				'label' => __( 'title', 'sir-furniture' )
 			),
 			'limit' => array(
@@ -44,11 +44,11 @@ class sir_latest_item_widget extends SIR_COMM_Widget {
             'orderby'   => array(
                 'type'  => 'select',
                 'options' => array(
-                    'date' => '날짜',
-                    'name' => '제목',
-                    'price' =>  '가격',
-                    'it_sum_qty' =>  '판매',
-                    'comment_count' => '상품후기수',
+                    'date' => __('날짜', 'sir-furniture'),
+                    'name' => __('제목', 'sir-furniture'),
+                    'price' =>  __('가격', 'sir-furniture'),
+                    'it_sum_qty' =>  __('판매', 'sir-furniture'),
+                    'comment_count' => __('상품후기수', 'sir-furniture'),
                 ),
 				'std'   => 'date',
                 'label' => __( '정렬순서를 지정합니다.', 'sir-furniture' ),

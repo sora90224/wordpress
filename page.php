@@ -9,9 +9,12 @@
  * @package WordPress
  */
 
+$is_shop_template = is_gnucommerce_page();
+$content_area_class = $is_shop_template ? 'content-area-shop' : 'content-area';
+
 get_header(); ?>
 
-<div id="primary" class="content-area-shop">
+<div id="primary" class="<?php echo $content_area_class; ?>">
 	<main id="main"  role="main">
 		<?php
 		// Start the loop.
@@ -34,5 +37,9 @@ get_header(); ?>
 	<?php get_sidebar( 'content-bottom' ); ?>
 
 </div><!-- .content-area -->
-
+<?php
+if( !$is_shop_template ){
+get_sidebar();
+}
+?>
 <?php get_footer(); ?>

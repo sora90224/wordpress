@@ -398,6 +398,8 @@
 .shop_view_slider ul.gc_bxslider li:first-child{position:relative;z-index:1}
 .gc_bxslider li {text-align:center}
 .gc_bxslider li span{display:block;}
+.gc_bxslider li img{width:100%;height:auto}
+
 .shop_view_slider
 .bx-wrapper{;margin:0 auto 15px;padding:0;;*zoom:1}
 .bx-wrapper img{width:100%;height:auto;display:block}
@@ -478,7 +480,7 @@
 
 #sit_ov_btn input {height:42px;vertical-align:middle;font-weight:bold;}
 #sit_btn_cart{background:#3a3a3a;border:1px solid #282828;color:#fff;width:41.5%;float:left;margin-right:1%}
-#sit_btn_buy {border:1px solid #4d8ad9;color:#fff;width:41.5%;background:#65a2f1;float:left;margin-right:1%}
+#sit_btn_buy {border:1px solid #4d8ad9;color:#fff;width:41.5%;background:#65a2f1;float:left;margin-right:1%;height:42px;}
 #sit_btn_wish{float:left;width:15%;height:42px;padding:0}
 #sit_sns{text-align:center; padding:10px 0 20px;}.sms_alram{padding: 1.0em 0 !important;width:108px;background:#f7f7f7;}
 .sms_alram:hover,.sms_alram:focus{background:#f7f7f7; }
@@ -651,8 +653,8 @@ only screen and (max-width: 760px) {
 .sps_section {float:left;width:630px}
 .sps_section p {padding:0;width:100%}
 .sps_con_full {padding:0;height:auto !important}
-.sps_con_btn {margin:5px 0 0;text-align:right}
-.sps_con_btn button {margin:0;padding:5px;border:0;background:#565e60;color:#fff}
+.sps_con_btn {margin:5px 0 0;position:absolute;top: 18px;right: 10px;}
+.sps_con_btn button {margin:0;padding:5px;border:0;background:#333;color:#fff}
 
 /* 목록 바로가기 */
 .sanchor{border-bottom:1px solid #d0d0d0;margin:30px 0 0;}

@@ -58,9 +58,9 @@ Sir Furniture is distributed under the terms of the GNU GPL v2
  * Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  */
 
-html {font-family: sans-serif;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;}
+html {font-family: sans-serif;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;height:100%}
 
-body {margin: 0;}
+body {margin: 0;height:100%}
 
 article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary {display: block;}
 audio,canvas,progress,video {display: inline-block;vertical-align: baseline;}
@@ -667,7 +667,6 @@ a:active {
 	border-bottom: 4px solid #1a1a1a;
 	clear: both;
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
-	margin: 0 7.6923% 3.5em;
 }
 
 .post-navigation a {
@@ -965,7 +964,7 @@ a:active {
 /*쇼핑몰 메인*/
 #shop-main-banner{background:url(img/bn_bg.gif);background-size: 100% 100%;margin-top:-1px}
 #shop-main-banner .bx-wrapper{margin-bottom:20px}
-#shop-main-banner .bx-viewport{max-width:1200px ;margin:0 auto}
+#shop-main-banner .bx-viewport{max-width:1160px ;margin:0 auto}
 #shop-main-banner .bx-wrapper .bx-pager{position:Absolute;top:40%;right:10px;padding:0}
 #shop-main-banner .bx-wrapper .bx-pager-item{display:block;margin:8px}
 #shop-main-banner .bx-pager a{background:#fff;width:8px;height:8px}
@@ -990,10 +989,13 @@ a:active {
 #main-event .main-event-prd{margin-top:-30px;padding:0 10px;position:relative;z-index:9}
 #main-event .main-event-prd:after{display:block;visibility:hidden;clear:both;content:""}
 #main-event .main-event-prd li{float:left;width:25%;padding:10px;}
-#main-event .main-event-prd li .main-evprd-wr{background:#fff;padding:20px;text-align:center;}
+#main-event .main-event-prd li .main-evprd-wr{background:#fff;padding:20px;text-align:center;
+box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.2);
+-webkit-box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 9px;
+-moz-box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 9px;}
 #main-event .main-event-prd li img{width:100%;height:auto;margin-bottom:10px}
-#main-event .main-event-prd li a{display:block;}
-#main-event .main-event-prd .prd-price{font-size:0.75em}
+#main-event .main-event-prd li a{display:block;color:#646464;font-size:0.750em}
+#main-event .main-event-prd .prd-price{font-size:0.75em;color:#79aaf3;font-weight:bold}
 
 
 
@@ -1010,6 +1012,7 @@ a:active {
 #main-item .main-item-list .sct-btn{position:absolute;bottom:0;left:0;width:100%}
 #main-item .main-item-list .sct-btn button{float: left;width: 50%;background: transparent;border: 0;border-bottom: 1px solid #e0e0e0;height: 30px;font-size:11px;color:#999;font-weight:normal}
 #main-item .main-item-list .sct-btn button i{font-size:12px}
+#main-item .main-item-list .sct_noitem{padding:100px 0;width:100% !important}
 
 .sct-cartop{position:absolute;top:0;left:0;width:100%;padding:10px;height:100%}
 .sct-cartop .sct-cartop-wr{background: rgba(255,255,255,0.7);height:100%;padding:15px;text-align:left}
@@ -1159,36 +1162,28 @@ a:active {
 #recent-posts-2,#meta-2{clear:both;}
 
 /* 게시물 복사,이동 팝업*/
-.gc_new_shortcode{}
-#copymove{padding:10px}
-#copymove h1{font-size: 1.250em;line-height: 1.225;margin-bottom: 1.05em;}
-#copymove .tbl_head01{background:#fff;font-size:0.813em}
-#copymove th{padding: 12px 0;border-top: 2px solid #525f78;border-bottom: 1px solid #efefef;background: #fff;color: #383838;font-size: 0.95em;text-align: center;letter-spacing: -0.1em;}
-
+#copymove .tbl_head01{background:#fff;font-size:0.813em;margin: 0 20px;}
 #copymove th:first-child{width:20%}
 #copymove th:last-child{width:80%}
 #copymove td.td_chk{text-align:center;}
 
-.win_btn{text-align:center;}
-.win_btn .btn_submit{padding:8px 7px;font-weight: normal;background:#545f79;border: none;border-radius: 2px;color: #fff;}
-.win_btn .btn_cancel{padding:7px;font-weight: normal;border-radius: 2px;}
 
 
 /* 스크랩 팝업 */
 .new_win .tbl_wrap{border:1px solid #eee}
-.new_win .tbl_wrap caption{padding:10px;background:#fff;}
+.new_win .tbl_wrap caption{padding:0px;background:#fff;}
 .new_win .tbl_wrap table{font-size:0.813em;background:#fff;}
 .new_win .tbl_wrap th{width:20%}
 .new_win .tbl_wrap th,.new_win .tbl_wrap td{border:1px solid #eee;}
-.new_win .win_btn .btn_submit{padding: 0 10px;height: 35px;line-height: 35px;display: inline-block;text-align: center;background: #65a2f1;color: #fff;border: 1px solid #4d8ad9;width:100px}
-.new_win .win_btn .btn_submit:hover{background:#545f79;}
+.new_win .win_btn .btn_submit{padding: 0 10px;height: 35px;line-height: 35px;display: inline-block;text-align: center;background: #65a2f1;color: #fff;border: 1px solid #4d8ad9;width:100px;font-size:12px}
+.new_win .win_btn .btn_submit:hover{background:#4d8ad9;}
+.win_btn{text-align:center;padding-bottom:20px}
+.new_win .win_btn button{padding:0 7px;border: 1px solid #ccc;background:#fafafa;color: #000;vertical-align: top;text-decoration: none;font-size:12px;height: 35px;line-height: 35px;}
+.win_btn .btn_cancel{padding:0 7px;font-weight:bold;font-size:12px;height: 35px;line-height: 35px;display:inline-block}
+
 .tbl_head01 tfoot td{background:#f3f3f3}
-.new_win #win_title{background:none}
+.new_win #win_title {margin: 0 0 20px;padding: 20px;border-top: 3px solid #4e5d60;border-bottom: 1px solid #e9e9e9;background: #fff;font-size: 12px;}
 #point .tbl_wrap caption{padding:0;height:0;overflow:hidden}
-
-
-
-
 
 
 
@@ -2004,9 +1999,9 @@ body.search-no-results .page-header {
  * 11.4 - Comments
  */
 
-.comments-area {
+/*.comments-area {
 	margin: 0 7.6923% 3.5em;
-}
+}*/
 
 .comment-list + .comment-respond,
 .comment-navigation + .comment-respond {
@@ -2055,7 +2050,7 @@ body.search-no-results .page-header {
 	color: #1a1a1a;
 	margin-bottom: 0.4375em;
 }
-
+.comment-author a{	color: #1a1a1a;}
 .comment-author .avatar {
 	float: left;
 	height: 28px;
@@ -2467,7 +2462,7 @@ p > video {
 	font-size: 1rem;
 	margin: 0;
 	width: auto;
-}
+}s
 
 .widecolumn .mu_register .prefix_address,
 .widecolumn .mu_register .suffix_address {
@@ -2488,7 +2483,7 @@ p > video {
 #sod_bsk_list #mod_option_frm form{background:#f7f7f7;border:1px solid #000}
 .sod_list .li_mod .mod_btn{background:#656363;}
 #sod_bsk_list #mod_option_frm .btn_submit{width:100px;padding:7px;border: 1px solid #4d8ad9;background: #65a2f1}
-button.btn_cancel{border-radius:2px}
+button.btn_cancel{background:#fff}
 .sod_bsk_cnt{background:#65a2f1}
 .entry-content .gc_container a{box-shadow:none}
 
@@ -2583,6 +2578,7 @@ a.btn_frmline, button.btn_frmline{background:#656363;font-size:0.92em}
 .bbs_scrap_ul .scrap_date{right:10px}
 .point_input_box input.input{border:1px solid #d3d3d3}
 #mileage_ul{padding:0;margin:0}
+
 /*적립금*/
 #mileage_sum {padding: 0px 15px;background: #fff;border: 2px solid #d3d3d3;margin:20px 0 0 }
 #mileage_sum .sum_row { border-bottom: 1px solid #eee;background:none}
@@ -2594,36 +2590,43 @@ a.btn_frmline, button.btn_frmline{background:#656363;font-size:0.92em}
 #commentform .form-submit #submit:hover, #commentform .form-submit #submit:focus{background:#545f79}
 
 /* 사용후기 */
+#sps ol{padding:0}
 #sps li{background:#fff;padding:10px}
-#sps .sps_section h2{padding:0;border:none;}
-.sps_section .sps_con{background:#f7f7f7;border:1px solid #e9e9e9}
-.sps_con_btn button{padding:7px;border-radius:2px;background:#54607a;border:1px solid #54607a;}
-.sps_con_btn button:hover{background:#fff;border:1px solid #007acc;color:#007acc;}
+#sps .sps_section h2{padding:0;border:none;margin-right:50px;margin-left:60px;}
+.sps_section{margin-left:0px;}
+.sps_section .sps_con{background:#f7f7f7;border:1px solid #e9e9e9;position:relative;margin-top:15px}
+.sps_con_btn button{padding:7px;background:#333;position:absolute;top:22px;right:10px;font-size:0.92em}
 .sps_img{position:absolute;top:10px;left:10px}
+#sps dl{margin:5px 50px 5px 60px;}
 
 /* 상품문의 쓰기 팝업 */
 .new_win .tbl_wrap{;border:none}
 .new_win p{line-height:1.6153846154}
 .new_win label{display:block;margin-bottom:0.5384615385em}
-.new_win .win_btn button{border-radius:2px;padding: 7px;border: 1px solid #ccc;background:#fafafa;color: #000;vertical-align: top;text-decoration: none;}
+
 
 /* 상품문의 */
+#sqa ol{padding:0}
+#sps_sch a{font-size:0.92em;height:30px;line-height:30px}
+#sqa_sch,#sps_sch{text-align:center}
 #sps_sch input[type=text],#sqa_sch input[type=text]{background:#fff;border: 1px solid #e4eaec;}
 {background:#fff;border: 1px solid #e4eaec;}
-#sqa_sch .btn_submit{padding:7px;border-radius:2px;background:#54607a;border: 1px solid #54607a;border-radius:2px;line-height:0}
+#sqa_sch .btn_submit,#sps_sch .btn_submit{padding:7px;;background:#65a2f1;border:1px solid #4d8ad9;line-height:0}
 #sqa_sch #sfl{border:1px solid #e4eaec}
 #sqa_sch a{font-size: 1.17em;display: inline-block;padding: 0 8px;height: 2em;background: #333;color: #fff;text-decoration: none;vertical-align: middle;line-height: 1.9em;}
 #sps dt,#sqa dt{text-indent:-999px;overflow:hidden;width:0;height:0;font-size:0;position:absolute;top:-999px}
 #sps dd,#sqa dd{margin-left:0}
-#sqa .sqa_section h2{padding:0;border:none}
-.sqa_section .sqa_con{background:#f7f7f7;border:1px solid #e9e9e9}
-.sqa_con_btn button{padding:7px;border-radius:2px;background:#54607a;border:1px solid #54607a;}
+#sqa .sqa_section h2{padding:0;border:none;margin-right:50px;margin-left:60px;}
+.sqa_section .sqa_con{background:#f7f7f7;border:1px solid #e9e9e9;margin-top:15px}
+.sqa_section{margin-left:0px;}
+.sqa_con_btn button{padding:7px;background:#333;position:absolute;top:22px;right:10px;font-size:0.92em}
 #sqa .sit_qa_qaa{border-top:1px solid #e9e9e9;}
 #sqa li{background:#fff;padding:10px;}
 .sqa_img{position:absolute;top:10px;left:10px}
 .sit_qaa_yet{font-weight:bold}
 .sit_qaa_done{font-weight:bold;color:#ff4081}
 .new_win p.itemqaform_secret label{display:inline-block}
+#sqa dl{margin:5px 50px 5px 60px;}
 
 /* 위시리스트 */
 #sod_ws_act button.btn01{float:inherit;width:130px;padding:0 5px;background: #65a2f1;border: 1px solid #4d8ad9;color: #fff;font-weight: bold;border-radius:0;height:40px;}
@@ -2882,7 +2885,6 @@ a.btn_frmline, button.btn_frmline{background:#656363;font-size:0.92em}
 
 	.site-header .main-navigation + .social-navigation {margin-top: 2.625em;}
 
-	.pagination {margin: 0 23.0769% 4.421052632em 7.6923%}
 	.post-navigation {margin-bottom: 5.25em;}
 	.post-navigation .post-title {
 		font-size: 28px;
@@ -2948,7 +2950,7 @@ a.btn_frmline, button.btn_frmline{background:#656363;font-size:0.92em}
 	.entry-content ol,
 	.entry-summary ol,
 	.comment-content ol {
-		margin-left: 0;
+/*		margin-left: 0;*/
 	}
 
 	.entry-content li > ul,

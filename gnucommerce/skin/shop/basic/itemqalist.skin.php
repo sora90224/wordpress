@@ -75,7 +75,7 @@ do_action( GC_NAME.'_skin_action', __FILE__, plugin_dir_path( __FILE__) );
 
         <div class="sqa_img">
             <a href="<?php echo $it_href; ?>">
-                <?php echo gc_get_it_image($row['it_id'], 70, 70); ?>
+                <?php echo gc_get_it_image($row['it_id'], 50, 50); ?>
                 <span><?php echo $row['it_name']; ?></span>
             </a>
         </div>

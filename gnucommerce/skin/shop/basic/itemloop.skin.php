@@ -28,8 +28,6 @@ $item_list->loop++;
         ?>
         <div class="sct_txt">
             <?php
-
-
                 if( $item_list->view_it_name ){     //상품 이름을 표시
                      echo "<div class=\"sct_tit\">".the_title()."</div>\n";
                 }

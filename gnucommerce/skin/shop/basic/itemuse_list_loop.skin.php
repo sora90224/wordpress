@@ -20,7 +20,7 @@ $is_num = gc_get_review_count() - ($args['page'] - 1) * $args['per_page'] - ($i 
 <<?php echo $tag;?> <?php comment_class( array('sit_use_li', empty( $args['has_children'] ) ? '' : 'parent' )) ?> id="comment-<?php comment_ID() ?>">
         <div class="sps_img">
             <a href="<?php echo get_permalink($comment->comment_post_ID); ?>">
-                <?php echo gc_get_it_image($comment->comment_post_ID, 70, 70); ?>
+                <?php echo gc_get_it_image($comment->comment_post_ID, 50, 50); ?>
                 <span></span>
             </a>
         </div>

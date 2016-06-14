@@ -113,10 +113,12 @@ do_action('sir_comm_before_header');
         <div class="hd_cate"><!-- site-inner -->
             <div class="hd-cate-wr">
             <?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) ) : ?>
+                <form role="search" method="get" id="search-form" action="<?php echo esc_url(home_url( '/' )); ?>">
                 <div class="hd-search">
-                    <input type="text" placeholder="검색어" class="hd-search-input">
-                    <input type="submit" value="검색" class="hd-search-btn">
+                    <input name="s" id="s" type="text" value="<?php echo get_search_query(); ?>" placeholder="<?php _e('검색어', 'sir-furniture'); ?>" class="hd-search-input">
+                    <input type="submit" id="searchsubmit" value="<?php _e('검색', 'sir-furniture'); ?>" class="hd-search-btn">
                 </div>
+                </form>
                 <div class="site-inner">
                     <ul class="site-header-top-link">
                         <?php if( is_user_logged_in () ){   //로그인 했으면 ?>

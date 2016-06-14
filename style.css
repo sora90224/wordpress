@@ -1,8 +1,8 @@
 /*
 Theme Name: Sir Furniture
 Theme URI: http://sir.kr
-Description: 반응형 가구 쇼핑몰 테마입니다. 리스트에서 장바구니와 위시리스트 담기 기능을 사용 할 수 있습니다.
-Author: kagla
+Description: 에스아이알 커뮤니티 테마입니다.
+Author: SIR SOFT
 Author URI: http://sir.kr
 Version: 1.0
 Tags: blank, one-column, right-sidebar theme-options, translation-ready, responsive-layout
@@ -948,7 +948,9 @@ a:active {
 #footer-cs a.mail {font-size: 1em;margin:3px 0}
 #footer-cs p{line-height:1.5em;font-size:11px;margin:0}
 #footer-bank p{line-height:1.5em;margin:0}
-#footer-notice li{}
+#footer-notice ul{margin:0;padding:0}
+#footer-notice li{ text-overflow: ellipsis;overflow: hidden;white-space: nowrap;list-style: none;padding:0 0 0 10px;margin:5px 0;background:url('img/lt_bg.gif') no-repeat 0 50%}
+#footer-notice li .cnt_cmt{color:#79aaf3}
 
 /* 메인 - main */
 

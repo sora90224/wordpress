@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sir-furniture\n"
-"POT-Creation-Date: 2016-06-14 10:53+0900\n"
-"PO-Revision-Date: 2016-06-14 10:53+0900\n"
+"POT-Creation-Date: 2016-06-14 11:21+0900\n"
+"PO-Revision-Date: 2016-06-14 11:21+0900\n"
 "Last-Translator: \n"
 "Language-Team: SIR SOFT\n"
 "Language: ko_KR\n"
@@ -974,7 +974,7 @@ msgstr ""
 #: gnucommerce/skin/board/bkboard1/view.skin.php:203
 #: gnucommerce/skin/board/bkgallery1/list.skin.php:223
 #: gnucommerce/skin/board/bkgallery1/view.skin.php:203
-#: gnucommerce/skin/board/default/list.skin.php:240
+#: gnucommerce/skin/board/default/list.skin.php:240 header.php:119
 msgid "검색"
 msgstr ""
 
@@ -1743,7 +1743,7 @@ msgstr ""
 msgid "기억하기"
 msgstr ""
 
-#: gnucommerce/skin/shop/basic/login_form.skin.php:16 header.php:126
+#: gnucommerce/skin/shop/basic/login_form.skin.php:16 header.php:128
 msgid "로그인"
 msgstr ""
 
@@ -1868,7 +1868,11 @@ msgstr ""
 msgid "Skip to content"
 msgstr "콘텐츠로 바로가기"
 
-#: header.php:123
+#: header.php:118
+msgid "검색어"
+msgstr ""
+
+#: header.php:125
 msgid "로그아웃"
 msgstr ""
 

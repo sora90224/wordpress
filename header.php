@@ -13,7 +13,7 @@ do_action('sir_comm_before_header');
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	<link href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.css" rel="stylesheet" />
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -37,13 +37,12 @@ do_action('sir_comm_before_header');
 
         <div class="site-header-main">
             
-            <ul class="site-header-gnb">
-                <li><a href="#">분류1</a></li>
-                <li><a href="#">분류2</a></li>
-                <li><a href="#">분류3</a></li>
-                <li><a href="#">분류4</a></li>
-                <li><a href="#">분류5</a></li>
-            </ul>
+            <?php
+            if ( has_nav_menu( 'pre_header_menu' ) ) :
+                wp_nav_menu( array( 'depth' => 1, 'container' => '', 'menu_class' => 'site-header-gnb', 'container_id'=>'', 'theme_location' => 'pre_header_menu' ) );
+            endif;
+            ?>
+
             <div class="site-branding">
                 <?php sircomm_the_custom_logo(); ?>
                 <?php if ( is_front_page() && is_home() ) : ?>
@@ -102,7 +101,9 @@ do_action('sir_comm_before_header');
                     <!-- <p class="site-description"><?php echo $description; ?></p> -->
                 <?php endif; ?>
             </div>
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>cart" class="hd_cart_btn">장바구니</a>
+            <?php if( $carturl = sirfurniture_gnucommerce_get_by('carturl') ){ // exists cart url ?>
+            <a href="<?php echo esc_url( $carturl ); ?>" class="hd_cart_btn"><?php _e('Cart', 'sir-furniture') ?></a>
+            <?php } ?>
             <button id="menu-toggle" class="menu-toggle">전체메뉴</button>
 
         </div>
@@ -120,23 +121,18 @@ do_action('sir_comm_before_header');
                     <ul class="site-header-top-link">
                         <?php if( is_user_logged_in () ){   //로그인 했으면 ?>
                         <li class="site-link-logout"><a href="<?php echo wp_logout_url(); ?>"><?php _e('로그아웃', 'sir-furniture'); ?></a></li>
-                        <li class="site-link-mypage"><a href="<?php echo esc_url( home_url( '/' ) ); ?>my_page">마이페이지</a></li>
+                        <li class="site-link-mypage"><?php sirfurniture_mypage_print(); ?></li>
                         <?php } else {  //로그인 하지 않았다면 ?>
                         <li class="site-link-login"><a href="<?php echo wp_login_url(); ?>"><?php _e('로그인', 'sir-furniture'); ?></a></li>
                         <?php } ?>
                     </ul> 
                 </div>
 
-                <ul id="cate-service-menu">
-                    <li><a href="#">주문조회</a></li>
-                    <li><a href="#">개인결제</a></li>
-                    <li><a href="#">리뷰</a></li>
-                    <li><a href="#">QA</a></li>
-                    <li><a href="#">고객센터</a></li>
-                    <li><a href="#">1:1문의</a></li>
-                    <li><a href="#">세일상품</a></li>
-                    <li><a href="#">갤러리</a></li>
-                </ul>
+                <?php
+                if ( has_nav_menu( 'pre_header_menu' ) ) :
+                    wp_nav_menu( array( 'depth' => 1, 'container' => '', 'menu_id' => 'cate-service-menu', 'container_id'=>'', 'theme_location' => 'sub_footer_menu' ) );
+                endif;
+                ?>
 
                 <div id="site-header-menu" class="site-header-menu">
                     <?php if ( has_nav_menu( 'primary' ) ) : ?>

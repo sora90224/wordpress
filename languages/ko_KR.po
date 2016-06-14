@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sir-furniture\n"
-"POT-Creation-Date: 2016-06-10 12:19+0900\n"
-"PO-Revision-Date: 2016-06-10 12:20+0900\n"
+"POT-Creation-Date: 2016-06-13 18:25+0900\n"
+"PO-Revision-Date: 2016-06-13 18:26+0900\n"
 "Last-Translator: \n"
 "Language-Team: SIR SOFT\n"
 "Language: ko_KR\n"
@@ -64,10 +64,18 @@ msgid "Do you want to enable the slide banner?"
 msgstr "슬라이드 배너를 활성화 하시겠습니까?"
 
 #: core/admin/customize/customize.php:37 core/admin/customize/customize.php:209
+#: core/admin/customize/customize.php:428
+#: core/admin/customize/customize.php:455
+#: core/admin/customize/customize.php:503
+#: core/admin/customize/customize.php:574
 msgid "No"
 msgstr "아니오"
 
 #: core/admin/customize/customize.php:38 core/admin/customize/customize.php:210
+#: core/admin/customize/customize.php:429
+#: core/admin/customize/customize.php:456
+#: core/admin/customize/customize.php:504
+#: core/admin/customize/customize.php:575
 msgid "Yes"
 msgstr "예"
 
@@ -178,27 +186,129 @@ msgstr "배너 #2"
 msgid "Banner #3"
 msgstr "배너 #3"
 
-#: core/template-functions.php:100
+#: core/admin/customize/customize.php:402
+#: core/admin/customize/customize.php:403
+#: core/admin/customize/customize.php:422
+msgid "Footer area"
+msgstr "푸터 영역"
+
+#: core/admin/customize/customize.php:412
+msgid "Footer area Settings"
+msgstr "푸터 설정"
+
+#: core/admin/customize/customize.php:423
+msgid "Do you want to enable the Footer area?"
+msgstr "푸터 영역을 활성화 하시겠습니까?"
+
+#: core/admin/customize/customize.php:439 core/widget/widget_functions.php:27
+msgid "Footer #1"
+msgstr "푸터 #1"
+
+#: core/admin/customize/customize.php:449
+msgid "Footer #1 enable"
+msgstr "푸터 #1 활성화"
+
+#: core/admin/customize/customize.php:450
+msgid "Do you want to enable the Footer #1?"
+msgstr "푸터 #1 을 활성화 하시겠습니까?"
+
+#: core/admin/customize/customize.php:464
+msgid "Footer #1 Title"
+msgstr "푸터 #1 제목"
+
+#: core/admin/customize/customize.php:465
+msgid "Input your Info Footer #1 Title"
+msgstr "푸터 #1 제목을 입력해 주세요."
+
+#: core/admin/customize/customize.php:474
+#: core/admin/customize/customize.php:546
+#: core/admin/customize/customize.php:593
+msgid "Info Text"
+msgstr "텍스트 입력"
+
+#: core/admin/customize/customize.php:475
+#: core/admin/customize/customize.php:547
+#: core/admin/customize/customize.php:594
+msgid "Insert your Info Text."
+msgstr "텍스트를 입력해 주세요."
+
+#: core/admin/customize/customize.php:487 core/widget/widget_functions.php:37
+msgid "Footer #2"
+msgstr "푸터 #2"
+
+#: core/admin/customize/customize.php:497
+msgid "Footer #2 enable"
+msgstr "푸터#2 활성화"
+
+#: core/admin/customize/customize.php:498
+msgid "Do you want to enable the Footer #2?"
+msgstr "푸터#2 를 활성화 하시겠습니까?"
+
+#: core/admin/customize/customize.php:513
+msgid "Footer #2 Title"
+msgstr "푸터#2 제목"
+
+#: core/admin/customize/customize.php:514
+msgid "Input your Info Footer #2 Title"
+msgstr "푸터#2 제목을 입력해 주세요."
+
+#: core/admin/customize/customize.php:524
+msgid "Center phone"
+msgstr "센터 전화"
+
+#: core/admin/customize/customize.php:525
+msgid "Input your Center phone"
+msgstr "센터 전화번호를 입력해 주세요."
+
+#: core/admin/customize/customize.php:535
+msgid "Center email"
+msgstr "센터 이메일"
+
+#: core/admin/customize/customize.php:536
+msgid "Input your Center email"
+msgstr "센터 이메일을 입력해 주세요."
+
+#: core/admin/customize/customize.php:558 core/widget/widget_functions.php:47
+msgid "Footer #3"
+msgstr "푸터 #3"
+
+#: core/admin/customize/customize.php:568
+msgid "Footer #3 enable"
+msgstr "푸터 #3을 활성화"
+
+#: core/admin/customize/customize.php:569
+msgid "Do you want to enable the Footer #3?"
+msgstr "푸터 #3 영역을 활성화 하겠습니까?"
+
+#: core/admin/customize/customize.php:583
+msgid "Footer #3 Title"
+msgstr "푸터 #3 제목"
+
+#: core/admin/customize/customize.php:584
+msgid "Input your Info Footer #3 Title"
+msgstr "푸터 #3 제목을 입력해 주세요."
+
+#: core/template-functions.php:128
 msgid "more"
 msgstr "더보기"
 
-#: core/template-functions.php:157
+#: core/template-functions.php:188
 msgid "HIT PRODUCT"
 msgstr "히트상품"
 
-#: core/template-functions.php:158
+#: core/template-functions.php:189
 msgid "RECOMMEND PRODUCT"
 msgstr "추천상품"
 
-#: core/template-functions.php:159
+#: core/template-functions.php:190
 msgid "LATEST PRODUCT"
 msgstr "최신상품"
 
-#: core/template-functions.php:160
+#: core/template-functions.php:191
 msgid "POPULAR PRODUCT"
 msgstr "인기상품"
 
-#: core/template-functions.php:161
+#: core/template-functions.php:192
 msgid "SALE PRODUCT"
 msgstr "할인상품"
 
@@ -455,19 +565,37 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: core/widget/gnucommerce_widget.php:303
-msgid "그누커머스 최신글 위젯입니다."
+#: core/widget/gnucommerce_item_widget.php:18
+msgid "그누커머스 상품 위젯입니다."
 msgstr ""
 
-#: core/widget/gnucommerce_widget.php:305
-msgid "그누커머스 최신글 위젯"
+#: core/widget/gnucommerce_item_widget.php:20
+msgid "그누커머스 상품 위젯"
 msgstr ""
 
-#: core/widget/gnucommerce_widget.php:309
-msgid "최신글"
+#: core/widget/gnucommerce_item_widget.php:25
+msgid "title"
+msgstr "제목"
+
+#: core/widget/gnucommerce_item_widget.php:33
+#: core/widget/gnucommerce_widget.php:307
+msgid "출력할 갯수"
 msgstr ""
 
-#: core/widget/gnucommerce_widget.php:310
+#: core/widget/gnucommerce_item_widget.php:42
+msgid "정렬를 지정합니다."
+msgstr ""
+
+#: core/widget/gnucommerce_item_widget.php:47
+#: gnucommerce/skin/board/bkboard1/list.skin.php:95
+#: gnucommerce/skin/board/bkboard1/view.skin.php:24
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:24
+#: gnucommerce/skin/board/default/list.skin.php:102
+msgid "날짜"
+msgstr ""
+
+#: core/widget/gnucommerce_item_widget.php:48
+#: core/widget/gnucommerce_widget.php:299
 #: gnucommerce/skin/board/bkboard1/list.skin.php:90
 #: gnucommerce/skin/board/bkboard1/list.skin.php:223
 #: gnucommerce/skin/board/bkboard1/write.skin.php:102
@@ -479,97 +607,164 @@ msgstr ""
 msgid "제목"
 msgstr ""
 
-#: core/widget/gnucommerce_widget.php:318
-msgid "출력할 갯수"
+#: core/widget/gnucommerce_item_widget.php:49
+msgid "가격"
 msgstr ""
 
-#: core/widget/gnucommerce_widget.php:323
+#: core/widget/gnucommerce_item_widget.php:50
+msgid "판매"
+msgstr ""
+
+#: core/widget/gnucommerce_item_widget.php:51
+msgid "상품후기수"
+msgstr ""
+
+#: core/widget/gnucommerce_item_widget.php:54
+msgid "정렬순서를 지정합니다."
+msgstr ""
+
+#: core/widget/gnucommerce_item_widget.php:59
+msgid "카테고리 이름을 입력합니다."
+msgstr ""
+
+#: core/widget/gnucommerce_item_widget.php:64
+msgid "more 주소( url )를 지정합니다."
+msgstr ""
+
+#: core/widget/gnucommerce_item_widget.php:69
+msgid "background image url 을 지정합니다."
+msgstr ""
+
+#: core/widget/gnucommerce_widget.php:292
+msgid "그누커머스 최신글 위젯입니다."
+msgstr ""
+
+#: core/widget/gnucommerce_widget.php:294
+msgid "그누커머스 최신글 위젯"
+msgstr ""
+
+#: core/widget/gnucommerce_widget.php:298
+msgid "최신글"
+msgstr ""
+
+#: core/widget/gnucommerce_widget.php:312
 msgid "출력할 게시판"
 msgstr ""
 
-#: core/widget/gnucommerce_widget.php:329
+#: core/widget/gnucommerce_widget.php:318
 msgid "스킨폴더"
 msgstr ""
 
-#: core/widget/gnucommerce_widget.php:338
+#: core/widget/gnucommerce_widget.php:327
 msgid "이미지 스킨일 경우 한줄에 출력할 갯수 설정"
 msgstr ""
 
-#: core/widget/gnucommerce_widget.php:343
+#: core/widget/gnucommerce_widget.php:332
 msgid "주소( url )를 지정합니다."
 msgstr ""
 
-#: core/widget/gnucommerce_widget.php:351
+#: core/widget/gnucommerce_widget.php:340
 msgid "출력할 제목 길이"
 msgstr ""
 
-#: core/widget/gnucommerce_widget.php:359
+#: core/widget/gnucommerce_widget.php:348
 msgid "출력할 내용 길이"
 msgstr ""
 
-#: core/widget/gnucommerce_widget.php:367
+#: core/widget/gnucommerce_widget.php:356
 msgid "캐쉬사용( 미사용시 0으로 설정 )"
 msgstr ""
 
-#: core/widget/widget_functions.php:16
-msgid "메인 1 영역"
-msgstr ""
+#: core/widget/widget_functions.php:17
+msgid "Main #1"
+msgstr "메인 #1"
 
-#: core/widget/widget_functions.php:18 core/widget/widget_functions.php:28
-#: core/widget/widget_functions.php:53
-msgid "사이트 메인에만 적용됩니다."
-msgstr ""
+#: core/widget/widget_functions.php:19
+msgid "Appears at the Main #1"
+msgstr "Main #1 에 출력합니다."
 
-#: core/widget/widget_functions.php:26
-msgid "메인 2 영역"
-msgstr ""
+#: core/widget/widget_functions.php:29
+msgid "Appears at the Footer #1"
+msgstr "Footer #1 에 출력합니다."
 
-#: core/widget/widget_functions.php:51
-msgid "메인 3 영역"
-msgstr ""
+#: core/widget/widget_functions.php:39
+msgid "Appears at the Footer #2"
+msgstr "Footer #2 에 출력합니다."
+
+#: core/widget/widget_functions.php:49
+msgid "Appears at the Footer #3"
+msgstr "Footer #3 에 출력합니다."
+
+#: core/widget/widget_functions.php:57
+msgid "Footer #4"
+msgstr "Footer #4"
+
+#: core/widget/widget_functions.php:59
+msgid "Appears at the Footer #4"
+msgstr "Footer #4 에 출력합니다."
 
 #: functions.php:86
+msgid "Header Menu"
+msgstr "상단 메뉴"
+
+#: functions.php:87
 msgid "Primary Menu"
 msgstr "기본 메뉴"
 
-#: functions.php:87
+#: functions.php:88
+msgid "Footer Menu"
+msgstr "하단 메뉴"
+
+#: functions.php:89
+msgid "Sidebar Menu"
+msgstr "사이드바 메뉴"
+
+#: functions.php:90
 msgid "Social Links Menu"
 msgstr "소셜 링크 메뉴"
 
-#: functions.php:154
+#: functions.php:157
 msgid "Sidebar"
 msgstr "사이드바"
 
-#: functions.php:156
+#: functions.php:159
 msgid "Add widgets here to appear in your sidebar."
 msgstr "사이드바에 나타나도록 하려면 여기에 위젯을 추가하세요."
 
-#: functions.php:164
+#: functions.php:167
 msgid "Content Bottom 1"
 msgstr "콘텐츠 하단 1"
 
-#: functions.php:166 functions.php:176
+#: functions.php:169 functions.php:179
 msgid "Appears at the bottom of the content on posts and pages."
 msgstr "포스트와 페이지의 콘텐츠 하단에 나타납니다."
 
-#: functions.php:174
+#: functions.php:177
 msgid "Content Bottom 2"
 msgstr "콘텐츠 하단 2"
 
 #. translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language.
 #. translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language.
 #. translators: If there are characters in your language that are not supported by Inconsolata, translate this to 'off'. Do not translate into your own language.
-#: functions.php:201 functions.php:206 functions.php:211
+#: functions.php:204 functions.php:209 functions.php:214
 msgid "on"
 msgstr ""
 
-#: functions.php:282
+#: functions.php:285
 msgid "expand child menu"
 msgstr "하위 메뉴 확장"
 
-#: functions.php:283
+#: functions.php:286
 msgid "collapse child menu"
 msgstr "하위 메뉴 축소"
+
+#: functions.php:491
+msgid "Mypage"
+msgstr "마이페이지"
+
+#: functions.php:505
+msgid "Edit My Profile"
+msgstr "내 프로필 편집"
 
 #: gnucommerce/skin/board/bkboard1/list.skin.php:24
 #: gnucommerce/skin/board/bkboard1/write.skin.php:91
@@ -587,10 +782,10 @@ msgstr ""
 
 #: gnucommerce/skin/board/bkboard1/list.skin.php:55
 #: gnucommerce/skin/board/bkboard1/list.skin.php:194
-#: gnucommerce/skin/board/bkboard1/view.skin.php:66
+#: gnucommerce/skin/board/bkboard1/view.skin.php:206
 #: gnucommerce/skin/board/bkgallery1/list.skin.php:43
 #: gnucommerce/skin/board/bkgallery1/list.skin.php:186
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:66
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:206
 #: gnucommerce/skin/board/default/list.skin.php:62
 #: gnucommerce/skin/board/default/list.skin.php:203
 msgid "글쓰기"
@@ -598,9 +793,9 @@ msgstr ""
 
 #: gnucommerce/skin/board/bkboard1/list.skin.php:78
 #: gnucommerce/skin/board/bkboard1/list.skin.php:193
-#: gnucommerce/skin/board/bkboard1/view.skin.php:64
+#: gnucommerce/skin/board/bkboard1/view.skin.php:204
 #: gnucommerce/skin/board/bkgallery1/list.skin.php:185
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:64
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:204
 #: gnucommerce/skin/board/default/list.skin.php:18
 #: gnucommerce/skin/board/default/list.skin.php:85
 #: gnucommerce/skin/board/default/list.skin.php:202
@@ -613,7 +808,6 @@ msgid "번호"
 msgstr ""
 
 #: gnucommerce/skin/board/bkboard1/list.skin.php:86
-#: gnucommerce/skin/board/bkgallery1/list.skin.php:66
 #: gnucommerce/skin/board/default/list.skin.php:93
 msgid "현재 페이지 게시물 전체"
 msgstr ""
@@ -621,13 +815,6 @@ msgstr ""
 #: gnucommerce/skin/board/bkboard1/list.skin.php:92
 #: gnucommerce/skin/board/default/list.skin.php:99
 msgid "글쓴이"
-msgstr ""
-
-#: gnucommerce/skin/board/bkboard1/list.skin.php:95
-#: gnucommerce/skin/board/bkboard1/view.skin.php:125
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:122
-#: gnucommerce/skin/board/default/list.skin.php:102
-msgid "날짜"
 msgstr ""
 
 #: gnucommerce/skin/board/bkboard1/list.skin.php:98
@@ -660,10 +847,10 @@ msgstr ""
 
 #: gnucommerce/skin/board/bkboard1/list.skin.php:136
 #: gnucommerce/skin/board/bkboard1/password.skin.php:5
-#: gnucommerce/skin/board/bkboard1/view.skin.php:127
+#: gnucommerce/skin/board/bkboard1/view.skin.php:26
 #: gnucommerce/skin/board/bkgallery1/list.skin.php:130
 #: gnucommerce/skin/board/bkgallery1/password.skin.php:4
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:124
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:26
 #: gnucommerce/skin/board/default/list.skin.php:144
 msgid "댓글"
 msgstr ""
@@ -725,7 +912,7 @@ msgid "검색대상"
 msgstr ""
 
 #: gnucommerce/skin/board/bkboard1/list.skin.php:224
-#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:122
+#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:124
 #: gnucommerce/skin/board/bkboard1/write.skin.php:112
 #: gnucommerce/skin/board/bkgallery1/list.skin.php:216
 #: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:124
@@ -747,9 +934,9 @@ msgid "회원아이디"
 msgstr ""
 
 #: gnucommerce/skin/board/bkboard1/list.skin.php:227
-#: gnucommerce/skin/board/bkboard1/view.skin.php:124
+#: gnucommerce/skin/board/bkboard1/view.skin.php:23
 #: gnucommerce/skin/board/bkgallery1/list.skin.php:219
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:121
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:23
 #: gnucommerce/skin/board/default/list.skin.php:236
 msgid "작성자"
 msgstr ""
@@ -762,8 +949,8 @@ msgstr ""
 
 #: gnucommerce/skin/board/bkboard1/list.skin.php:229
 #: gnucommerce/skin/board/bkboard1/password.skin.php:40
-#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:103
-#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:107
+#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:105
+#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:109
 #: gnucommerce/skin/board/bkboard1/write.skin.php:63
 #: gnucommerce/skin/board/bkboard1/write.skin.php:70
 #: gnucommerce/skin/board/bkboard1/write.skin.php:91
@@ -784,9 +971,9 @@ msgid "필수"
 msgstr ""
 
 #: gnucommerce/skin/board/bkboard1/list.skin.php:231
-#: gnucommerce/skin/board/bkboard1/view.skin.php:63
+#: gnucommerce/skin/board/bkboard1/view.skin.php:203
 #: gnucommerce/skin/board/bkgallery1/list.skin.php:223
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:63
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:203
 #: gnucommerce/skin/board/default/list.skin.php:240
 msgid "검색"
 msgstr ""
@@ -820,17 +1007,17 @@ msgid "답변글도 선택하셔야 게시글이 삭제됩니다."
 msgstr ""
 
 #: gnucommerce/skin/board/bkboard1/list.skin.php:287
-#: gnucommerce/skin/board/bkboard1/view.skin.php:61
+#: gnucommerce/skin/board/bkboard1/view.skin.php:201
 #: gnucommerce/skin/board/bkgallery1/list.skin.php:278
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:61
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:201
 #: gnucommerce/skin/board/default/list.skin.php:296
 msgid "복사"
 msgstr ""
 
 #: gnucommerce/skin/board/bkboard1/list.skin.php:289
-#: gnucommerce/skin/board/bkboard1/view.skin.php:62
+#: gnucommerce/skin/board/bkboard1/view.skin.php:202
 #: gnucommerce/skin/board/bkgallery1/list.skin.php:280
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:62
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:202
 #: gnucommerce/skin/board/default/list.skin.php:298
 msgid "이동"
 msgstr ""
@@ -840,19 +1027,19 @@ msgid "글"
 msgstr ""
 
 #: gnucommerce/skin/board/bkboard1/password.skin.php:6
-#: gnucommerce/skin/board/bkboard1/view.skin.php:59
-#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:64
+#: gnucommerce/skin/board/bkboard1/view.skin.php:199
+#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:66
 #: gnucommerce/skin/board/bkgallery1/password.skin.php:5
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:59
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:199
 #: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:66
 msgid "수정"
 msgstr ""
 
 #: gnucommerce/skin/board/bkboard1/password.skin.php:7
-#: gnucommerce/skin/board/bkboard1/view.skin.php:60
-#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:65
+#: gnucommerce/skin/board/bkboard1/view.skin.php:200
+#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:67
 #: gnucommerce/skin/board/bkgallery1/password.skin.php:6
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:60
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:200
 #: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:67
 msgid "삭제"
 msgstr ""
@@ -893,7 +1080,7 @@ msgid ""
 msgstr ""
 
 #: gnucommerce/skin/board/bkboard1/password.skin.php:40
-#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:107
+#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:109
 #: gnucommerce/skin/board/bkboard1/write.skin.php:70
 #: gnucommerce/skin/board/bkgallery1/password.skin.php:39
 #: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:109
@@ -911,97 +1098,97 @@ msgstr ""
 
 #: gnucommerce/skin/board/bkboard1/view.skin.php:21
 #: gnucommerce/skin/board/bkgallery1/view.skin.php:21
-msgid "본문"
-msgstr ""
-
-#: gnucommerce/skin/board/bkboard1/view.skin.php:53
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:53
-msgid "이전"
-msgstr ""
-
-#: gnucommerce/skin/board/bkboard1/view.skin.php:54
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:54
-msgid "다음"
-msgstr ""
-
-#: gnucommerce/skin/board/bkboard1/view.skin.php:65
-#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:63
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:65
-#: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:65
-msgid "답변"
-msgstr ""
-
-#: gnucommerce/skin/board/bkboard1/view.skin.php:80
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:80
-msgid "스크랩"
-msgstr ""
-
-#: gnucommerce/skin/board/bkboard1/view.skin.php:123
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:120
 msgid "페이지정보"
 msgstr ""
 
-#: gnucommerce/skin/board/bkboard1/view.skin.php:126
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:123
+#: gnucommerce/skin/board/bkboard1/view.skin.php:25
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:25
 msgid "조회수"
 msgstr ""
 
-#: gnucommerce/skin/board/bkboard1/view.skin.php:130
+#: gnucommerce/skin/board/bkboard1/view.skin.php:30
 #: gnucommerce/skin/board/bkboard1/write.skin.php:138
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:127
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:30
 #: gnucommerce/skin/board/bkgallery1/write.skin.php:136
 msgid "첨부파일"
 msgstr ""
 
-#: gnucommerce/skin/board/bkboard1/view.skin.php:143
-#: gnucommerce/skin/board/bkboard1/view.skin.php:189
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:140
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:186
+#: gnucommerce/skin/board/bkboard1/view.skin.php:43
+#: gnucommerce/skin/board/bkboard1/view.skin.php:89
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:43
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:89
 msgid "회"
 msgstr ""
 
-#: gnucommerce/skin/board/bkboard1/view.skin.php:173
-#: gnucommerce/skin/board/bkboard1/view.skin.php:186
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:170
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:183
+#: gnucommerce/skin/board/bkboard1/view.skin.php:73
+#: gnucommerce/skin/board/bkboard1/view.skin.php:86
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:73
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:86
 msgid "관련링크"
 msgstr ""
 
+#: gnucommerce/skin/board/bkboard1/view.skin.php:104
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:104
+msgid "본문"
+msgstr ""
+
+#: gnucommerce/skin/board/bkboard1/view.skin.php:134
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:134
+msgid "스크랩"
+msgstr ""
+
+#: gnucommerce/skin/board/bkboard1/view.skin.php:193
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:193
+msgid "이전"
+msgstr ""
+
+#: gnucommerce/skin/board/bkboard1/view.skin.php:194
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:194
+msgid "다음"
+msgstr ""
+
+#: gnucommerce/skin/board/bkboard1/view.skin.php:205
+#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:65
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:205
+#: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:65
+msgid "답변"
+msgstr ""
+
 #: gnucommerce/skin/board/bkboard1/view.skin.php:250
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:247
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:250
 msgid "다운로드 권한이 없습니다."
 msgstr ""
 
 #: gnucommerce/skin/board/bkboard1/view.skin.php:250
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:247
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:250
 msgid "회원이시라면 로그인 후 이용해 보십시오."
 msgstr ""
 
 #: gnucommerce/skin/board/bkboard1/view.skin.php:254
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:251
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:254
 #, php-format
 msgid "파일을 다운로드 하시면 포인트가 차감(%s점)됩니다.) points."
 msgstr ""
 
 #: gnucommerce/skin/board/bkboard1/view.skin.php:254
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:251
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:254
 msgid ""
 "포인트는 게시물당 한번만 차감되며 다음에 다시 다운로드 하셔도 중복하여 차감하"
 "지 않습니다."
 msgstr ""
 
 #: gnucommerce/skin/board/bkboard1/view.skin.php:254
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:251
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:254
 msgid "그래도 다운로드 하시겠습니까?"
 msgstr ""
 
 #: gnucommerce/skin/board/bkboard1/view.skin.php:287
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:284
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:287
 msgid "이 글을 비추천하셨습니다."
 msgstr ""
 
 #: gnucommerce/skin/board/bkboard1/view.skin.php:290
-#: gnucommerce/skin/board/bkgallery1/view.skin.php:287
+#: gnucommerce/skin/board/bkgallery1/view.skin.php:290
 msgid "이 글을 추천하셨습니다."
 msgstr ""
 
@@ -1015,29 +1202,29 @@ msgstr ""
 msgid "님의 댓글"
 msgstr ""
 
-#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:40
+#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:42
 #: gnucommerce/skin/board/bkboard1/write.skin.php:44
 #: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:42
 #: gnucommerce/skin/board/bkgallery1/write.skin.php:44
 msgid "비밀글"
 msgstr ""
 
-#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:55
+#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:57
 #: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:57
 msgid "자신의 글이 아니므로 수정할 수 없습니다."
 msgstr ""
 
-#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:71
+#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:73
 #: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:73
 msgid "등록된 댓글이 없습니다."
 msgstr ""
 
-#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:82
+#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:84
 #: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:84
 msgid "댓글 쓰기"
 msgstr ""
 
-#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:103
+#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:105
 #: gnucommerce/skin/board/bkboard1/write.skin.php:63
 #: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:105
 #: gnucommerce/skin/board/bkgallery1/write.skin.php:63
@@ -1045,62 +1232,62 @@ msgstr ""
 msgid "이름"
 msgstr ""
 
-#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:112
+#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:114
 #: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:114
 msgid "비밀글사용"
 msgstr ""
 
-#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:117
+#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:119
 #: gnucommerce/skin/board/bkboard1/write.skin.php:151
 #: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:119
 #: gnucommerce/skin/board/bkgallery1/write.skin.php:149
 msgid "자동등록방지"
 msgstr ""
 
-#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:124
-#: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:126
+#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:125
+#: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:125
 msgid "길이"
 msgstr ""
 
-#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:135
-#: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:137
+#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:129
+#: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:129
 msgid "댓글등록"
 msgstr ""
 
-#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:207
-#: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:209
+#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:206
+#: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:206
 msgid "내용에 금지 단어가 포함되어 있습니다 : "
 msgstr ""
 
-#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:221
-#: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:223
+#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:220
+#: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:220
 #, php-format
 msgid "%d 글자 이상 쓰셔야 합니다."
 msgstr ""
 
-#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:225
-#: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:227
+#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:224
+#: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:224
 #, php-format
 msgid "%d 글자 이하로 쓰셔야 합니다."
 msgstr ""
 
-#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:231
-#: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:233
+#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:230
+#: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:230
 msgid "댓글을 입력하여 주십시오."
 msgstr ""
 
-#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:240
-#: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:242
+#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:239
+#: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:239
 msgid "이름을 입력하세요."
 msgstr ""
 
-#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:251
-#: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:253
+#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:250
+#: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:250
 msgid "비밀번호를 입력하세요."
 msgstr ""
 
-#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:317
-#: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:319
+#: gnucommerce/skin/board/bkboard1/view_comment.skin.php:316
+#: gnucommerce/skin/board/bkgallery1/view_comment.skin.php:316
 msgid "댓글을 삭제하시겠습니까?"
 msgstr ""
 
@@ -1216,6 +1403,10 @@ msgstr ""
 msgid "내용은 %d 글자 이하로 쓰셔야 합니다."
 msgstr ""
 
+#: gnucommerce/skin/board/bkgallery1/list.skin.php:67
+msgid "게시물 전체"
+msgstr ""
+
 #: gnucommerce/skin/board/bkgallery1/list.skin.php:96
 msgid "읽는중"
 msgstr ""
@@ -1238,6 +1429,7 @@ msgstr ""
 
 #: gnucommerce/skin/latest/basic/latest.skin.php:69
 #: gnucommerce/skin/latest/gallery/latest.skin.php:86
+#: gnucommerce/skin/latest/short/latest.skin.php:66
 #: gnucommerce/skin/latest/tip/latest.skin.php:96
 msgid "게시물이 없습니다."
 msgstr ""
@@ -1260,82 +1452,82 @@ msgstr ""
 msgid "요약정보 및 구매"
 msgstr ""
 
-#: gnucommerce/skin/shop/basic/item.form.skin.php:71
+#: gnucommerce/skin/shop/basic/item.form.skin.php:75
 #, php-format
 msgid "상품 선택옵션 %s 개, 추가옵션 %s 개"
 msgstr ""
 
-#: gnucommerce/skin/shop/basic/item.form.skin.php:78
+#: gnucommerce/skin/shop/basic/item.form.skin.php:82
 msgid "제조사"
 msgstr ""
 
-#: gnucommerce/skin/shop/basic/item.form.skin.php:85
+#: gnucommerce/skin/shop/basic/item.form.skin.php:89
 msgid "원산지"
 msgstr ""
 
-#: gnucommerce/skin/shop/basic/item.form.skin.php:92
+#: gnucommerce/skin/shop/basic/item.form.skin.php:96
 msgid "브랜드"
 msgstr ""
 
-#: gnucommerce/skin/shop/basic/item.form.skin.php:99
+#: gnucommerce/skin/shop/basic/item.form.skin.php:103
 msgid "모델"
 msgstr ""
 
-#: gnucommerce/skin/shop/basic/item.form.skin.php:106
-#: gnucommerce/skin/shop/basic/item.form.skin.php:111
-#: gnucommerce/skin/shop/basic/item.form.skin.php:123
+#: gnucommerce/skin/shop/basic/item.form.skin.php:110
+#: gnucommerce/skin/shop/basic/item.form.skin.php:115
+#: gnucommerce/skin/shop/basic/item.form.skin.php:127
 msgid "판매가격"
 msgstr ""
 
-#: gnucommerce/skin/shop/basic/item.form.skin.php:107
+#: gnucommerce/skin/shop/basic/item.form.skin.php:111
 msgid "판매중지"
 msgstr ""
 
-#: gnucommerce/skin/shop/basic/item.form.skin.php:112
+#: gnucommerce/skin/shop/basic/item.form.skin.php:116
 msgid "전화문의"
 msgstr ""
 
-#: gnucommerce/skin/shop/basic/item.form.skin.php:117
+#: gnucommerce/skin/shop/basic/item.form.skin.php:121
 msgid "시중가격"
 msgstr ""
 
-#: gnucommerce/skin/shop/basic/item.form.skin.php:132
+#: gnucommerce/skin/shop/basic/item.form.skin.php:136
 msgid "재고수량"
 msgstr ""
 
-#: gnucommerce/skin/shop/basic/item.form.skin.php:134
+#: gnucommerce/skin/shop/basic/item.form.skin.php:138
 #, php-format
 msgid "%s 개"
 msgstr ""
 
-#: gnucommerce/skin/shop/basic/item.form.skin.php:140
+#: gnucommerce/skin/shop/basic/item.form.skin.php:144
 msgid "적립금"
 msgstr ""
 
-#: gnucommerce/skin/shop/basic/item.form.skin.php:154
-#: gnucommerce/skin/shop/basic/item.form.skin.php:162
+#: gnucommerce/skin/shop/basic/item.form.skin.php:158
+#: gnucommerce/skin/shop/basic/item.form.skin.php:166
 msgid "배송비결제"
 msgstr ""
 
-#: gnucommerce/skin/shop/basic/item.form.skin.php:157
+#: gnucommerce/skin/shop/basic/item.form.skin.php:161
 msgid "무료배송"
-msgstr ""
-
-#: gnucommerce/skin/shop/basic/item.form.skin.php:160
-#: gnucommerce/skin/shop/basic/item.form.skin.php:165
-msgid "수령후 지불"
 msgstr ""
 
 #: gnucommerce/skin/shop/basic/item.form.skin.php:164
 #: gnucommerce/skin/shop/basic/item.form.skin.php:169
+msgid "수령후 지불"
+msgstr ""
+
+#: gnucommerce/skin/shop/basic/item.form.skin.php:168
+#: gnucommerce/skin/shop/basic/item.form.skin.php:173
 msgid "주문시 결제"
 msgstr ""
 
-#: gnucommerce/skin/shop/basic/item.form.skin.php:178
+#: gnucommerce/skin/shop/basic/item.form.skin.php:182
 msgid "최소구매수량"
 msgstr ""
 
-#: gnucommerce/skin/shop/basic/item.form.skin.php:184
+#: gnucommerce/skin/shop/basic/item.form.skin.php:188
 msgid "최대구매수량"
 msgstr ""
 
@@ -1387,16 +1579,16 @@ msgstr ""
 msgid "위시리스트"
 msgstr ""
 
-#: gnucommerce/skin/shop/basic/item.form.skin.php:291
+#: gnucommerce/skin/shop/basic/item.form.skin.php:295
+msgid "이 분류에 등록된 다른 상품이 없습니다."
+msgstr ""
+
+#: gnucommerce/skin/shop/basic/item.form.skin.php:307
 msgid "로그인 하셔야 합니다."
 msgstr ""
 
-#: gnucommerce/skin/shop/basic/item.form.skin.php:309
+#: gnucommerce/skin/shop/basic/item.form.skin.php:325
 msgid "위시리스트에 추가되었습니다. 위시리스트로 이동하시겠습니까?"
-msgstr ""
-
-#: gnucommerce/skin/shop/basic/item.form.skin.php:341
-msgid "이 분류에 등록된 다른 상품이 없습니다."
 msgstr ""
 
 #: gnucommerce/skin/shop/basic/item.info.skin.php:8
@@ -1435,6 +1627,16 @@ msgstr ""
 #: gnucommerce/skin/shop/basic/item.info.skin.php:113
 msgid "관련상품"
 msgstr ""
+
+#: gnucommerce/skin/shop/basic/itemloop.skin.php:65
+#: gnucommerce/template/latest_type.php:31 header.php:105
+msgid "Cart"
+msgstr "장바구니"
+
+#: gnucommerce/skin/shop/basic/itemloop.skin.php:66
+#: gnucommerce/template/latest_type.php:32
+msgid "Wishlist"
+msgstr "위시리스트"
 
 #: gnucommerce/skin/shop/basic/itemstocksms.skin.php:21
 msgid "상품"
@@ -1541,7 +1743,7 @@ msgstr ""
 msgid "기억하기"
 msgstr ""
 
-#: gnucommerce/skin/shop/basic/login_form.skin.php:16 header.php:123
+#: gnucommerce/skin/shop/basic/login_form.skin.php:16 header.php:126
 msgid "로그인"
 msgstr ""
 
@@ -1658,23 +1860,15 @@ msgstr ""
 msgid "참고항목"
 msgstr ""
 
-#: gnucommerce/template/latest.php:40 gnucommerce/template/latest_type.php:40
+#: gnucommerce/template/latest.php:32 gnucommerce/template/latest_type.php:40
 msgid "NO_ITEMS"
 msgstr ""
 
-#: gnucommerce/template/latest_type.php:31
-msgid "Cart"
-msgstr "장바구니"
-
-#: gnucommerce/template/latest_type.php:32
-msgid "Wishlist"
-msgstr "위시리스트"
-
-#: header.php:32
+#: header.php:34
 msgid "Skip to content"
 msgstr "콘텐츠로 바로가기"
 
-#: header.php:120
+#: header.php:123
 msgid "로그아웃"
 msgstr ""
 

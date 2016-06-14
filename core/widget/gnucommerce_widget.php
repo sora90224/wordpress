@@ -276,18 +276,7 @@ class sir_latest_board_widget extends SIR_COMM_Widget {
         $result_array = array();
         $board_array = array();
 
-        /*
-        $dirname = get_template_directory().'/gnucommerce/skin/latest/';
-        $handle = opendir($dirname);
-        while ($file = readdir($handle)) {
-            if($file == '.'||$file == '..') continue;
-
-            if (is_dir($dirname.$file)) $result_array[] = $file;
-        }
-        closedir($handle);
-        */
-
-        $result_array = array('basic', 'gallery', 'tip');
+        $result_array = array('short', 'basic', 'gallery', 'tip');
 
         $result_array = apply_filters('sir_comm_get_latest_skin_folder', array_combine($result_array, $result_array) );
 

@@ -4,38 +4,45 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 /**
  * Homepage
  *
- * @see  gnusmmt_homepage_content()
+ * @see  sirfurniture_homepage_content()
  */
-//add_action( 'homepage', 'gnusmmt_homepage_content',      10 );
+//add_action( 'homepage', 'sirfurniture_homepage_content',      10 );
 
 /**
  * Homepage
  *
  * @see  shop_main_banner
  */
-add_action( 'homepage', 'gnusmmt_shop_main_banner',      20 );
+add_action( 'homepage', 'sirfurniture_shop_main_banner',      20 );
 
 /**
  * Homepage
  *
  * @see  shop_sub_banner
  */
-add_action( 'homepage', 'gnusmmt_shop_sub_banner',      25 );
+add_action( 'homepage', 'sirfurniture_shop_sub_banner',      25 );
 
 /**
  * Homepage
  *
  * @see  shop_sub_banner
  */
-add_action( 'homepage', 'gnusmmt_latest_gnucommerce_shop',      26 );
+add_action( 'homepage', 'sirfurniture_latest_gnucommerce_shop',      26 );
+
+/**
+ * Homepage
+ *
+ * @see  sirfurniture_main_widget_area
+ */
+add_action( 'homepage', 'sirfurniture_main_widget_area',      30 );
 
 /**
  * Homepage
  *
  * @see  shop_sub_banner
  */
-add_action( 'homepage', 'gnusmmt_latest_gnucommerce_shop_type',      30 );
+add_action( 'homepage', 'sirfurniture_latest_gnucommerce_shop_type',      40 );
 
 
-add_filter( 'gc_get_icon_url', 'gnusmmt_get_icon_url' );
+add_filter( 'gc_get_icon_url', 'sirfurniture_get_icon_url' );
 ?>

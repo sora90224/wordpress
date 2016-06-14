@@ -393,6 +393,211 @@ if (!function_exists('sirfurniture_customize_panel_function')) {
 				"std" => "_self",
 
 			),
+
+
+            /* Footer */
+
+			array( 
+				
+				"title" => __( "Footer area", 'sir-furniture'),
+				"description" => __( "Footer area", 'sir-furniture'),
+				"type" => "panel",
+				"id" => "footer_panel",
+				"priority" => "11",
+				
+			),
+
+			array( 
+
+				"title" => __( 'Footer area Settings', 'sir-furniture'),
+				"type" => "section",
+				"panel" => "footer_panel",
+				"priority" => "12",
+				"id" => "footer_area_settings",
+
+			),
+
+			array(
+				
+				"label" => __( "Footer area", 'sir-furniture'),
+				"description" => __( "Do you want to enable the Footer area?", 'sir-furniture'),
+				"id" => "sir_enable_footer_area",
+				"type" => "select",
+				"section" => "footer_area_settings",
+				"options" => array (
+				   "off" => __( "No",'sir-furniture'),
+				   "on" => __( "Yes",'sir-furniture'),
+				),
+				
+				"std" => "on",
+			
+			),
+
+            /* Footer #1 */
+			array( 
+
+				"title" => __( "Footer #1", 'sir-furniture'),
+				"type" => "section",
+				"panel" => "footer_panel",
+				"priority" => "13",
+				"id" => "footer_1_section",
+
+			),
+
+			array(
+				
+				"label" => __( "Footer #1 enable",'sir-furniture'),
+				"description" => __( "Do you want to enable the Footer #1?", 'sir-furniture'),
+				"id" => "sir_enable_footer1",
+				"type" => "select",
+				"section" => "footer_1_section",
+				"options" => array (
+				   "off" => __( "No",'sir-furniture'),
+				   "on" => __( "Yes",'sir-furniture'),
+				),
+				
+				"std" => "on",
+			
+			),
+
+			array( 
+				"label" => __( "Footer #1 Title", 'sir-furniture'),
+				"description" => __( "Input your Info Footer #1 Title", 'sir-furniture'),
+				"id" => "sir_footer_info_title",
+				"type" => "text",
+				"section" => "footer_1_section",
+				"std" => 'INFO',
+			),
+
+			array( 
+
+				"label" => __( "Info Text", 'sir-furniture'),
+				"description" => __( "Insert your Info Text.", 'sir-furniture'),
+				"id" => "sir_footer_info_text",
+				"type" => "textarea",
+				"section" => "footer_1_section",
+				"std" => sirfurniture_footer_default_content_by('footer1'),
+
+			),
+
+            /* Footer #2 */
+
+			array( 
+
+				"title" => __( "Footer #2", 'sir-furniture'),
+				"type" => "section",
+				"panel" => "footer_panel",
+				"priority" => "13",
+				"id" => "footer_2_section",
+
+			),
+
+			array(
+				
+				"label" => __( "Footer #2 enable",'sir-furniture'),
+				"description" => __( "Do you want to enable the Footer #2?", 'sir-furniture'),
+				"id" => "sir_enable_footer2",
+				"type" => "select",
+				"section" => "footer_2_section",
+				"options" => array (
+				   "off" => __( "No",'sir-furniture'),
+				   "on" => __( "Yes",'sir-furniture'),
+				),
+				
+				"std" => "on",
+			
+			),
+
+			array( 
+
+				"label" => __( "Footer #2 Title", 'sir-furniture'),
+				"description" => __( "Input your Info Footer #2 Title", 'sir-furniture'),
+				"id" => "sir_footer_2_info_title",
+				"type" => "text",
+				"section" => "footer_2_section",
+				"std" => 'CS CENTER',
+
+			),
+
+			array( 
+
+				"label" => __( "Center phone", 'sir-furniture'),
+				"description" => __( "Input your Center phone", 'sir-furniture'),
+				"id" => "sir_footer_2_phone",
+				"type" => "text",
+				"section" => "footer_2_section",
+				"std" => '02-123-1234',
+
+			),
+
+			array( 
+
+				"label" => __( "Center email", 'sir-furniture'),
+				"description" => __( "Input your Center email", 'sir-furniture'),
+				"id" => "sir_footer_2_mail",
+				"type" => "text",
+				"section" => "footer_2_section",
+				"std" => 'abc@abc.com',
+
+			),
+
+			array( 
+
+				"label" => __( "Info Text", 'sir-furniture'),
+				"description" => __( "Insert your Info Text.", 'sir-furniture'),
+				"id" => "sir_footer_2_info_text",
+				"type" => "textarea",
+				"section" => "footer_2_section",
+				"std" => sirfurniture_footer_default_content_by('footer2'),
+
+			),
+
+            /* Footer #3 */
+			array( 
+
+				"title" => __( "Footer #3", 'sir-furniture'),
+				"type" => "section",
+				"panel" => "footer_panel",
+				"priority" => "13",
+				"id" => "footer_3_section",
+
+			),
+
+			array(
+				
+				"label" => __( "Footer #3 enable",'sir-furniture'),
+				"description" => __( "Do you want to enable the Footer #3?", 'sir-furniture'),
+				"id" => "sir_enable_footer3",
+				"type" => "select",
+				"section" => "footer_3_section",
+				"options" => array (
+				   "off" => __( "No",'sir-furniture'),
+				   "on" => __( "Yes",'sir-furniture'),
+				),
+				
+				"std" => "on",
+			
+			),
+
+			array( 
+				"label" => __( "Footer #3 Title", 'sir-furniture'),
+				"description" => __( "Input your Info Footer #3 Title", 'sir-furniture'),
+				"id" => "sir_footer_3_info_title",
+				"type" => "text",
+				"section" => "footer_3_section",
+				"std" => 'BANK INFO',
+			),
+
+			array( 
+
+				"label" => __( "Info Text", 'sir-furniture'),
+				"description" => __( "Insert your Info Text.", 'sir-furniture'),
+				"id" => "sir_footer_3_info_text",
+				"type" => "textarea",
+				"section" => "footer_3_section",
+				"std" => sirfurniture_footer_default_content_by('footer3'),
+
+			),
 		);
 		
 		new sirfurniture_customize($theme_panel);

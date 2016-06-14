@@ -22,10 +22,10 @@ foreach($items as $post){
             <?php echo gc_get_product_thumbnail(); ?>
         </a>
         <div class="sct-info-wr">
-            <a href="#" class="sct-ptd"><?php the_title(); ?></a>
+            <a href="<?php the_permalink(); ?>" class="sct-ptd"><?php the_title(); ?></a>
             <span class="sct-cost"><?php echo gc_display_price(gc_get_price($post), $post->it_tel_inq); ?></span>
             <?php
-                echo "<div class=\"sct-icon\">".gc_item_icon($post)."</div>\n";
+                echo "<div class=\"sct-icon\">".gc_item_icon($post, 0, 0)."</div>\n";
             ?>
             <div class="sct-btn">
                 <button type="button" class="btn-cart" data-it_id="<?php echo $post->ID;?>"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="btn-txt"><?php _e('Cart', 'sir-furniture');?></span></button>

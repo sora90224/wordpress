@@ -27,48 +27,50 @@
             <?php endif; ?>
 
             <div class="site-info">
-                <div id="footer-link">
-                    <ul>
-                        <li><a href="#"><b><span class="border-deco">개인정보 처리방침</span></b></a></li>
-                        <li><a href="#"><span class="border-deco">이용약관</span></a></li>
-                        <li><a href="#"><span class="border-deco">회사소개</span></a></li>
-                        <li><a href="#"><span class="border-deco">개인정보취급</span></a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
+
+                <?php
+                if ( has_nav_menu( 'sub_footer_menu' ) ) :
+                    add_filter('wp_nav_menu', 'sirfurniture_first_and_last');
+                    wp_nav_menu( array( 'depth' => 1, 'container_id' => 'footer-link', 'theme_location' => 'sub_footer_menu', 'link_before'=>'<span class="border-deco">', 'link_after'=>'</span>'  ) );
+                    remove_filter('wp_nav_menu', 'sirfurniture_first_and_last');
+                endif;
+                ?>
+
+                <?php
+                if ( sirfurniture_get_option('sir_enable_footer_area') == 'on' || !sirfurniture_get_option('sir_enable_footer_area') ) :
+                ?>
+
                 <div id="footer-info" class="footer-con">
-                    <h2>INFO</h2>
-                    <address class="f-info footer-address">서울특별시 강남구 강남대로 123, 역삼동 1004호</address>
-                    <span class="f-info footer-phone">T.02-1234-5678</span>
-                    <span class="f-info footer-fax">F.02-1234-5678</span>
+                    <?php if ( sirfurniture_get_option('sir_enable_footer1') == 'on' || !sirfurniture_get_option('sir_enable_footer1') ) : ?>
+                    <h2><?php echo esc_html(sirfurniture_get_option('sir_footer_info_title','INFO')); ?></h2>
+                    <?php echo nl2br(esc_html(sirfurniture_get_option('sir_footer_info_text', sirfurniture_footer_default_content_by('footer1')))); ?>
+                    <?php endif; ?>
+                    <?php do_action( 'sirfurniture_footer1' ); ?>
                 </div>
                 <div id="footer-cs" class="footer-con">
-                    <h2>CS CENTER</h2>
-                    <a href="tel:02-123-1234"><i class="fa fa-phone" aria-hidden="true"></i> 02-123-1234</a>
-                    <a href="mailto:abc@abc.com" class="mail"><i class="fa fa-envelope" aria-hidden="true"></i> abc@abc.com</a>
-                    <p>월-금 am 11:00 - pm 05:00<br>점심시간 : am 12:00 - pm 01:00</p>
+                    <?php if ( sirfurniture_get_option('sir_enable_footer2') == 'on' || !sirfurniture_get_option('sir_enable_footer2') ) : ?>
+                    <h2><?php echo esc_html(sirfurniture_get_option('sir_footer_2_info_title','CS CENTER')); ?></h2>
+                    <a href="tel:<?php echo esc_attr(sirfurniture_get_option('sir_footer_2_phone','02-123-1234')); ?>"><i class="fa fa-phone" aria-hidden="true"></i> <?php echo esc_attr(sirfurniture_get_option('sir_footer_2_phone','02-123-1234')); ?></a>
+                    <a href="mailto:<?php echo sanitize_email(sirfurniture_get_option('sir_footer_2_mail','abc@abc.com')); ?>" class="mail"><i class="fa fa-envelope" aria-hidden="true"></i> <?php echo sanitize_email(sirfurniture_get_option('sir_footer_2_mail','abc@abc.com')); ?></a>
+                    <p><?php echo nl2br(esc_html(sirfurniture_get_option('sir_footer_2_info_text', sirfurniture_footer_default_content_by('footer2')))); ?></p>
+                    <?php endif; ?>
+                    <?php do_action( 'sirfurniture_footer2' ); ?>
                 </div>
                 <div id="footer-bank" class="footer-con">
-                    <h2>BANK INFO</h2>
-                    <p>국민은행 : 123456-00-123456<br>예금주: 홍길동</p>
+                    <?php if ( sirfurniture_get_option('sir_enable_footer3') == 'on' || !sirfurniture_get_option('sir_enable_footer3') ) : ?>
+                    <h2><?php echo esc_html(sirfurniture_get_option('sir_footer_3_info_title','BANK INFO')); ?></h2>
+                    <p><?php echo nl2br(esc_html(sirfurniture_get_option('sir_footer_3_info_text', sirfurniture_footer_default_content_by('footer3')))); ?></p>
+                    <?php endif; ?>
+                    <?php do_action( 'sirfurniture_footer3' ); ?>
                 </div>
                 <div id="footer-notice" class="footer-con">
-                    <h2>공지사항</h2>
-                    <ul>
-                        <li><a href="#">공지사항입니다</a></li>
-                        <li><a href="#">공지사항입니다</a></li>
-                        <li><a href="#">공지사항입니다</a></li>
-                        <li><a href="#">공지사항입니다</a></li>
-                        <li><a href="#">공지사항입니다</a></li>
-                    </ul>
+                    <?php do_action( 'sirfurniture_footer4' ); ?>
                 </div>
+
                 <?php
-                    /**
-                     *
-                     * @since sir community 1.0
-                     */
-                    do_action( 'sircomm_credits' );
-                ?>  
+                endif;
+                ?>
+
             </div><!-- .site-info -->
         </div>
     </footer><!-- .site-footer -->

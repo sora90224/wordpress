@@ -24,14 +24,14 @@ jQuery(document).ready(function($) {
       $('.main-banner').bxSlider();
     });
     
-
+    var select_option_el = "select.ajax_it_option";
     gnusmmt.add_cart = function(frm){
 
         if( gnucommerce === undefined )
             return false;
 
         var $frm = $(frm);
-        var $sel = $frm.find("select.it_option");
+        var $sel = $frm.find(select_option_el);
         var it_name = $frm.find("input[name^=it_name]").val();
         var it_price = parseInt($frm.find("input[name^=it_price]").val());
         var id = "";
@@ -163,7 +163,7 @@ jQuery(document).ready(function($) {
         });
     }
 
-    var $main_item_list = $(".main-item-list");
+    var $main_item_list = $(".main-item-list, .gnucommerce-ajax-cart");
 
     $main_item_list.on("click", ".cart-op-close", function(e) {
         e.preventDefault();
@@ -177,14 +177,14 @@ jQuery(document).ready(function($) {
         gnusmmt.add_wishitem(this);
     });
 
-    $main_item_list.on("change", "select.it_option", function(e) {
+    $main_item_list.on("change", select_option_el, function(e) {
         e.preventDefault();
 
         if( gnucommerce === undefined )
             return false;
 
         var $frm = $(this).closest("form");
-        var $sel = $frm.find("select.it_option");
+        var $sel = $frm.find(select_option_el);
         var sel_count = $sel.size();
         var idx = $sel.index($(this));
         var val = $(this).val();
@@ -192,7 +192,7 @@ jQuery(document).ready(function($) {
 
         // 선택값이 없을 경우 하위 옵션은 disabled
         if(val == "") {
-            $frm.find("select.it_option:gt("+idx+")").val("").attr("disabled", true);
+            $frm.find(select_option_el+":gt("+idx+")").val("").attr("disabled", true);
             return;
         }
 
@@ -202,7 +202,7 @@ jQuery(document).ready(function($) {
 
             // 상위 옵션의 값을 읽어 옵션id 만듬
             if(idx > 0) {
-                $frm.find("select.it_option:lt("+idx+")").each(function() {
+                $frm.find(select_option_el+":lt("+idx+")").each(function() {
                     if(!opt_id)
                         opt_id = $(this).val();
                     else
@@ -223,7 +223,7 @@ jQuery(document).ready(function($) {
                     // select의 옵션이 변경됐을 경우 하위 옵션 disabled
                     if(idx+1 < sel_count) {
                         var idx2 = idx + 1;
-                        $frm.find("select.it_option:gt("+idx2+")").val("").attr("disabled", true);
+                        $frm.find(select_option_el+":gt("+idx2+")").val("").attr("disabled", true);
                     }
                 }
             );

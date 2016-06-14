@@ -2518,6 +2518,7 @@ button.btn_cancel{background:#fff}
 #sod_bsk_tot .sod_bsk_cnt {background: none;color:#ff4081 !important}
 #sod_frm_pay .tbl_wrap{background:#fff}
 #sod_frm_paysel{background:#fff;}
+#sod_frm_paysel label{display:inline-block;padding-right:15px;}
 #cp_frm #cp_close,#od_coupon_frm .btn_submit, #sc_coupon_frm .btn_submit{display: inline-block;padding: 0 7px;border: 1px solid #ccc;background: #fafafa;color: #000;vertical-align: top;text-decoration: none;font-size: 13px;height: 34px;}
 .gc_order_form .orderer_box .text_input label{margin-right:10px;vertical-align:middle}
 .gc_order_form .orderer_box .text_input input[type="radio"]{vertical-align:middle;margin:0}

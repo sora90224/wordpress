@@ -15,20 +15,6 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-	    
-        <?php
-        // admin/main/options/homepage.php sircomm_input_homepagesection
-
-        do_action('sir_community_main_area');
-
-        ?>
-
-	    <div id="idx-new-content">
-            
-            <?php do_action('sir_community_main_latest'); ?>
-            <?php do_action('sir_community_main_content'); ?>
-            
-    	</div> <?php // end html idx-new-content ?>
 
         <main id="main" class="site-main" role="main">
 
@@ -56,9 +42,9 @@ get_header(); ?>
 
         // Previous/next page navigation.
         the_posts_pagination( array(
-        'prev_text' => __( 'Previous page', 'gnucommerce-2016-summer-ipha' ),
-        'next_text' => __( 'Next page', 'gnucommerce-2016-summer-ipha' ),
-        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'gnucommerce-2016-summer-ipha' ) . ' </span>',
+        'prev_text' => __( 'Previous page', 'sir-furniture' ),
+        'next_text' => __( 'Next page', 'sir-furniture' ),
+        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'sir-furniture' ) . ' </span>',
         ) );
 
         // If no content, include the "No posts found" template.

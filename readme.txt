@@ -1,15 +1,15 @@
-=== Sir Community ===
+=== Sir Furniture ===
 Contributors: kagla
 Requires at least: WordPress 4.4
 Tested up to: WordPress 4.5
-Version: 1.1
+Version: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: gnucommerce-2016-summer-ipha, Sir-Community, sir, community, black, blue, gray, green, white, yellow, dark, light, one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Tags: black, blue, gray, green, white, yellow, dark, light, one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
 
 == Description ==
-gnucommerce-2016-summer-ipha
-에스아이알 커뮤니티 테마입니다.
+sir-furniture
+반응형 가구 쇼핑몰 테마입니다. 리스트에서 장바구니와 위시리스트 담기 기능을 사용 할 수 있습니다.
 
 * Mobile-first, Responsive Layout
 * Custom Colors
@@ -23,15 +23,15 @@ For more information about sir community please go to https://codex.wordpress.or
 == Installation ==
 
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
-2. Type in Sir Community in the search form and press the 'Enter' key on your keyboard.
+2. Type in Sir Furniture in the search form and press the 'Enter' key on your keyboard.
 3. Click on the 'Activate' button to use your new theme right away.
 4. Go to https://codex.wordpress.org/Twenty_Sixteen for a guide on how to customize this theme.
 5. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 == Copyright ==
 
-Sir Community WordPress Theme, Copyright 2014-2015 WordPress.org
-Sir Community is distributed under the terms of the GNU GPL
+Sir Furniture WordPress Theme, Copyright 2014-2015 WordPress.org
+Sir Furniture is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -43,7 +43,7 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-Sir Sommunity Theme bundles the following third-party resources:
+Sir Furniture Theme bundles the following third-party resources:
 
 HTML5 Shiv v3.7.0, Copyright 2014 Alexander Farkas
 Licenses: MIT/GPL2

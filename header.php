@@ -129,8 +129,8 @@ do_action('sir_comm_before_header');
                 </div>
 
                 <?php
-                if ( has_nav_menu( 'pre_header_menu' ) ) :
-                    wp_nav_menu( array( 'depth' => 1, 'container' => '', 'menu_id' => 'cate-service-menu', 'container_id'=>'', 'theme_location' => 'sub_footer_menu' ) );
+                if ( has_nav_menu( 'sidebar_menu' ) ) :
+                    wp_nav_menu( array( 'depth' => 1, 'container' => '', 'menu_id' => 'cate-service-menu', 'container_id'=>'', 'theme_location' => 'sidebar_menu' ) );
                 endif;
                 ?>
 

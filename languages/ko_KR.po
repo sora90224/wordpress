@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sir-furniture\n"
-"POT-Creation-Date: 2016-06-13 18:25+0900\n"
-"PO-Revision-Date: 2016-06-13 18:26+0900\n"
+"POT-Creation-Date: 2016-06-14 10:53+0900\n"
+"PO-Revision-Date: 2016-06-14 10:53+0900\n"
 "Last-Translator: \n"
 "Language-Team: SIR SOFT\n"
 "Language: ko_KR\n"
@@ -26,15 +26,15 @@ msgstr ""
 "해당 위치에서 찾을 수 있는 것이 아무 것도 없는 것 같습니다. 검색을 해보시겠습"
 "니까?"
 
-#: archive.php:47 index.php:59 search.php:35
+#: archive.php:47 index.php:45 search.php:35
 msgid "Previous page"
 msgstr "이전 쪽"
 
-#: archive.php:48 index.php:60 search.php:36
+#: archive.php:48 index.php:46 search.php:36
 msgid "Next page"
 msgstr "다음 쪽"
 
-#: archive.php:49 image.php:58 index.php:61 search.php:37
+#: archive.php:49 image.php:58 index.php:47 search.php:37
 #: template-parts/content-page.php:25 template-parts/content-single.php:27
 #: template-parts/content.php:36
 msgid "Page"
@@ -697,7 +697,7 @@ msgstr "Footer #3 에 출력합니다."
 
 #: core/widget/widget_functions.php:57
 msgid "Footer #4"
-msgstr "Footer #4"
+msgstr "푸터 #4"
 
 #: core/widget/widget_functions.php:59
 msgid "Appears at the Footer #4"
@@ -758,11 +758,11 @@ msgstr "하위 메뉴 확장"
 msgid "collapse child menu"
 msgstr "하위 메뉴 축소"
 
-#: functions.php:491
+#: functions.php:508
 msgid "Mypage"
 msgstr "마이페이지"
 
-#: functions.php:505
+#: functions.php:522
 msgid "Edit My Profile"
 msgstr "내 프로필 편집"
 

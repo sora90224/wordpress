@@ -1017,8 +1017,8 @@ box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.2);
 .sct-cartop{position:absolute;top:0;left:0;width:100%;padding:10px;height:100%}
 .sct-cartop .sct-cartop-wr{background: rgba(255,255,255,0.7);height:100%;padding:15px;text-align:left}
 .sct-cartop label{display:block;font-size:0.75em;margin-bottom:3px;}
-.sct-cartop select{width:100%;margin-bottom:10px;font-size:0.75em;height:30px}
-.sct-cartop button{padding:0 ;width:100%;height:30px;font-size:0.75em;height:30px;margin-bottom:3px}
+.sct-cartop select{width:100%;margin-bottom:10px;height:30px}
+.sct-cartop button{padding:0 ;width:100%;height:30px;;height:30px;margin-bottom:3px}
 
 /*탭*/
 .tab-wr{text-align:center;background:url('img/tab_bg.gif') repeat-x;margin:20px;}
